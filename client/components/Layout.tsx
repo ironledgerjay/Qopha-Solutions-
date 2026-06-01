@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -14,20 +15,22 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <span className="text-white font-bold text-lg">QS</span>
             </div>
             <div>
               <div className="font-bold text-lg text-gray-900">Qopha</div>
-              <div className="text-xs text-gray-600">Solutions</div>
+              <div className="text-xs text-primary font-semibold">Solutions</div>
             </div>
           </Link>
-          
+
           <nav className="hidden md:flex items-center gap-8">
             <NavLink href="#about">About</NavLink>
             <NavLink href="#services">Services</NavLink>
@@ -36,18 +39,59 @@ const Header = () => {
             <NavLink href="#contact">Contact</NavLink>
           </nav>
 
-          <Link 
+          <Link
             to="#contact"
-            className="hidden md:inline-flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
+            className="hidden md:inline-flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium hover:shadow-lg hover:scale-105"
           >
             Get in Touch
             <ArrowRight className="w-4 h-4" />
           </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-gray-900" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-900" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 space-y-3 animate-in fade-in slide-in-from-top-2 duration-300">
+            <MobileNavLink href="#about" onClick={() => setIsMenuOpen(false)}>About Us</MobileNavLink>
+            <MobileNavLink href="#services" onClick={() => setIsMenuOpen(false)}>Services</MobileNavLink>
+            <MobileNavLink href="#values" onClick={() => setIsMenuOpen(false)}>Our Values</MobileNavLink>
+            <MobileNavLink href="#experience" onClick={() => setIsMenuOpen(false)}>Clients & Experience</MobileNavLink>
+            <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</MobileNavLink>
+            <Link
+              to="#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+            >
+              Get in Touch
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </nav>
+        )}
       </div>
     </header>
   );
 };
+
+const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => (
+  <a
+    href={href}
+    onClick={onClick}
+    className="block px-4 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors font-medium"
+  >
+    {children}
+  </a>
+);
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <a href={href} className="text-gray-700 hover:text-primary transition-colors font-medium text-sm">
@@ -57,7 +101,7 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div>

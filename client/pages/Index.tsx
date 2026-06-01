@@ -1,38 +1,60 @@
 import { Layout } from '@/components/Layout';
-import { ArrowRight, CheckCircle, Target, Users, Lightbulb, Award, Briefcase } from 'lucide-react';
+import { ArrowRight, CheckCircle, Target, Users, Lightbulb, Award, Briefcase, Zap, TrendingUp } from 'lucide-react';
+
+const ClientLogo = ({ name, initials, color }: { name: string; initials: string; color: string }) => (
+  <div className={`flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-lg ${color} shadow-md hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group`}>
+    <div className="text-center">
+      <div className="text-2xl md:text-3xl font-bold text-white group-hover:animate-pulse">{initials}</div>
+      <div className="text-xs text-white/80 mt-1 font-semibold">{name.split(' ')[0]}</div>
+    </div>
+  </div>
+);
 
 const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
-        
+
+        {/* Tech Grid Background */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <div className="animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
+                <Zap className="w-4 h-4 text-primary" />
+                <span className="text-sm font-semibold text-primary">Enterprise Transformation</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                 Real Impact Solutions for Sustainable Transformation
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 We design, implement and monitor bespoke programmes that align to national and global sustainability goals, focusing on skills development, enterprise growth, and socio-economic transformation.
               </p>
-              <button className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-colors font-semibold text-lg">
+              <button className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold text-lg hover:shadow-2xl hover:scale-105 active:scale-95">
                 Get Started
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
-            
+
             <div className="hidden md:block">
-              <div className="relative">
-                <div className="w-full aspect-square bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl border-2 border-primary/20 flex items-center justify-center">
+              <div className="relative animate-fade-in-down">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl blur-2xl"></div>
+                <div className="relative w-full aspect-square bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl border-2 border-primary/30 flex items-center justify-center backdrop-blur-sm hover:border-primary/50 transition-colors duration-300">
                   <div className="text-center">
-                    <div className="text-8xl font-bold text-primary mb-4">QS</div>
+                    <div className="text-8xl font-bold text-primary mb-4 animate-pulse">QS</div>
                     <p className="text-2xl text-white font-semibold">Qopha Solutions</p>
-                    <p className="text-primary mt-2">Real Impact Solutions</p>
+                    <p className="text-primary/80 mt-2 font-medium">Real Impact Solutions</p>
                   </div>
                 </div>
               </div>
@@ -208,22 +230,21 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mt-12 bg-gradient-to-r from-primary/10 to-primary/5 p-8 md:p-12 rounded-2xl border border-primary/20">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Notable Clients</h3>
-            <p className="text-gray-700 text-sm mb-6">We've had the privilege of working with industry leaders including:</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm text-gray-600">
-              <div>• Coca-Cola Beverages South Africa</div>
-              <div>• Distell</div>
-              <div>• Heineken Beverages</div>
-              <div>• P&G</div>
-              <div>• SAB</div>
-              <div>• Bridgestone</div>
-              <div>• AngloAmerican</div>
-              <div>• Telkom Foundation</div>
-              <div>• Samsung</div>
-              <div>• Standard Bank</div>
-              <div>• SEDA</div>
-              <div>• Gauteng Province</div>
+          <div className="mt-12">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Trusted by Industry Leaders</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 p-8 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl border border-primary/20">
+              <ClientLogo name="Coca-Cola" initials="CC" color="bg-red-600" />
+              <ClientLogo name="Distell" initials="DT" color="bg-amber-700" />
+              <ClientLogo name="Heineken" initials="HB" color="bg-green-700" />
+              <ClientLogo name="P&G" initials="PG" color="bg-blue-700" />
+              <ClientLogo name="SAB" initials="SAB" color="bg-red-500" />
+              <ClientLogo name="Bridgestone" initials="BS" color="bg-gray-700" />
+              <ClientLogo name="AngloAmerican" initials="AA" color="bg-slate-700" />
+              <ClientLogo name="Telkom" initials="TK" color="bg-teal-600" />
+              <ClientLogo name="Samsung" initials="SG" color="bg-blue-800" />
+              <ClientLogo name="Standard Bank" initials="SB" color="bg-blue-900" />
+              <ClientLogo name="SEDA" initials="SD" color="bg-orange-600" />
+              <ClientLogo name="Gauteng" initials="GP" color="bg-indigo-700" />
             </div>
           </div>
         </div>
@@ -303,8 +324,8 @@ interface StatBoxProps {
 }
 
 const StatBox = ({ number, label, icon: Icon }: StatBoxProps) => (
-  <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
-    <Icon className="w-8 h-8 text-primary mb-3" />
+  <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:bg-primary/10 group">
+    <Icon className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
     <div className="text-3xl font-bold text-gray-900 mb-1">{number}</div>
     <p className="text-sm text-gray-600">{label}</p>
   </div>
@@ -317,18 +338,18 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ title, icon: Icon, items }: ServiceCardProps) => (
-  <div className="bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/30 hover:shadow-lg transition-all">
+  <div className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-primary/5">
     <div className="flex items-center gap-3 mb-6">
-      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
         <Icon className="w-6 h-6 text-primary" />
       </div>
-      <h3 className="text-2xl font-bold text-gray-900">{title}</h3>
+      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors">{title}</h3>
     </div>
     <ul className="space-y-3">
       {items.map((item, idx) => (
-        <li key={idx} className="flex items-start gap-3 text-gray-700">
-          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-          <span>{item}</span>
+        <li key={idx} className="flex items-start gap-3 text-gray-700 group-hover:text-gray-900 transition-colors">
+          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+          <span className="group-hover:translate-x-1 transition-transform">{item}</span>
         </li>
       ))}
     </ul>
@@ -336,8 +357,11 @@ const ServiceCard = ({ title, icon: Icon, items }: ServiceCardProps) => (
 );
 
 const ExperienceCard = ({ number, label }: { number: string; label: string }) => (
-  <div className="bg-white p-8 rounded-2xl border border-gray-100 text-center">
-    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{number}</div>
+  <div className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/30 text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
+    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors mx-auto">
+      <TrendingUp className="w-6 h-6 text-primary" />
+    </div>
+    <div className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">{number}</div>
     <p className="text-gray-700 font-medium">{label}</p>
   </div>
 );
@@ -348,13 +372,13 @@ interface CertCardProps {
 }
 
 const CertCard = ({ title, items }: CertCardProps) => (
-  <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
-    <h3 className="text-2xl font-bold text-gray-900 mb-6">{title}</h3>
+  <div className="group bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-primary/30 hover:bg-gradient-to-br hover:from-gray-50 hover:to-primary/5 transition-all duration-300 hover:shadow-lg">
+    <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-primary transition-colors">{title}</h3>
     <ul className="space-y-4">
       {items.map((item, idx) => (
-        <li key={idx} className="flex items-start gap-3 text-gray-700">
-          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-          <span className="text-sm">{item}</span>
+        <li key={idx} className="flex items-start gap-3 text-gray-700 group-hover:text-gray-900 transition-colors">
+          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+          <span className="text-sm group-hover:translate-x-1 transition-transform">{item}</span>
         </li>
       ))}
     </ul>
