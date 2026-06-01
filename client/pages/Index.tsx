@@ -1,5 +1,7 @@
 import { Layout } from '@/components/Layout';
 import { ArrowRight, CheckCircle, Target, Users, Lightbulb, Award, Briefcase, Zap, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
+import { ServiceModal, Service } from '@/components/ServiceModal';
 
 const ClientLogo = ({ name, initials, color }: { name: string; initials: string; color: string }) => (
   <div className={`flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-lg ${color} shadow-md hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group`}>
@@ -10,7 +12,67 @@ const ClientLogo = ({ name, initials, color }: { name: string; initials: string;
   </div>
 );
 
+const serviceData: Record<string, Service> = {
+  skills: {
+    title: 'Skills Development',
+    description: 'Comprehensive training and development solutions',
+    items: [
+      'Training & Facilitation',
+      'Skills Gap Analysis',
+      'QCTO Aligned Preparations',
+      'SAQA Accredited Qualifications',
+      'Assessments & Moderation',
+    ],
+    fullDescription: 'Our Skills Development services focus on equipping individuals and organizations with the competencies needed to thrive in today\'s dynamic business environment. We design and deliver customized training programs aligned with QCTO and SAQA standards, conduct comprehensive skills gap analyses, and facilitate professional development through accredited assessments and moderation.',
+  },
+  enterprise: {
+    title: 'Enterprise Development',
+    description: 'Strategic business growth and transformation',
+    items: [
+      'Strategy Development',
+      'Business Diagnostics',
+      'Formalisation Solutions',
+      'Funding Linkages',
+      'Mentorship & Coaching',
+      'Monitoring and Evaluation',
+    ],
+    fullDescription: 'We provide end-to-end enterprise development services that help businesses transition from informal to formal operations, secure funding, and scale sustainably. Our experienced team conducts thorough business diagnostics, develops growth strategies, and provides ongoing mentorship and coaching to ensure long-term success.',
+  },
+  supplier: {
+    title: 'Supplier Development',
+    description: 'Building strong supplier ecosystems',
+    items: [
+      'Market Research',
+      'Spend and Demand Analysis',
+      'Procurement Analysis',
+      'Supplier Diversity',
+      'Supplier Development Solutions',
+      'Programme Implementation',
+    ],
+    fullDescription: 'Our Supplier Development services help organizations optimize their procurement processes and build diverse, capable supplier networks. We conduct market research and analysis, develop supplier strategies, and implement comprehensive development programmes that strengthen supply chain resilience and economic transformation.',
+  },
+  socio: {
+    title: 'Socio-Economic Development',
+    description: 'Community transformation and impact initiatives',
+    items: [
+      'Strategy Design',
+      'Sustainable Solutions Development',
+      'Programme Execution',
+      'Monitoring and Evaluation',
+    ],
+    fullDescription: 'We design and execute socio-economic development initiatives that create lasting positive impact in communities. From strategy formulation to programme implementation and impact evaluation, we work collaboratively with stakeholders to drive sustainable transformation that aligns with national development priorities.',
+  },
+};
+
 const Index = () => {
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleServiceClick = (serviceKey: keyof typeof serviceData) => {
+    setSelectedService(serviceData[serviceKey]);
+    setIsModalOpen(true);
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -154,7 +216,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <ServiceCard 
+            <ServiceCard
               title="Skills Development"
               icon={Award}
               items={[
@@ -164,8 +226,9 @@ const Index = () => {
                 'SAQA Accredited Qualifications',
                 'Assessments & Moderation'
               ]}
+              onClick={() => handleServiceClick('skills')}
             />
-            <ServiceCard 
+            <ServiceCard
               title="Enterprise Development"
               icon={Lightbulb}
               items={[
@@ -175,6 +238,7 @@ const Index = () => {
                 'Funding Linkages',
                 'Mentorship & Coaching'
               ]}
+              onClick={() => handleServiceClick('enterprise')}
             />
             <ServiceCard 
               title="Supplier Development"
@@ -282,6 +346,8 @@ const Index = () => {
         </div>
       </section>
 
+      <ServiceModal isOpen={isModalOpen} service={selectedService} onClose={() => setIsModalOpen(false)} />
+
       {/* CTA Section */}
       <section id="contact" className="py-20 md:py-28 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
@@ -335,10 +401,14 @@ interface ServiceCardProps {
   title: string;
   icon: React.ComponentType<{ className?: string }>;
   items: string[];
+  onClick?: () => void;
 }
 
-const ServiceCard = ({ title, icon: Icon, items }: ServiceCardProps) => (
-  <div className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-primary/5">
+const ServiceCard = ({ title, icon: Icon, items, onClick }: ServiceCardProps) => (
+  <button
+    onClick={onClick}
+    className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-primary/5 text-left w-full"
+  >
     <div className="flex items-center gap-3 mb-6">
       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
         <Icon className="w-6 h-6 text-primary" />
@@ -353,7 +423,12 @@ const ServiceCard = ({ title, icon: Icon, items }: ServiceCardProps) => (
         </li>
       ))}
     </ul>
-  </div>
+    {onClick && (
+      <div className="mt-6 text-primary font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+        Learn More <ArrowRight className="w-4 h-4" />
+      </div>
+    )}
+  </button>
 );
 
 const ExperienceCard = ({ number, label }: { number: string; label: string }) => (
