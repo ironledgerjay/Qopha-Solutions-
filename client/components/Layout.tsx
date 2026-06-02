@@ -153,8 +153,15 @@ const Footer = () => {
             <div className="flex items-start gap-3">
               <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div className="text-sm">
-                <p className="font-medium">Phone</p>
-                <p className="text-gray-400">084 417 4305</p>
+                <p className="font-medium">Phone / WhatsApp</p>
+                <a
+                  href="https://wa.me/27084174305?text=Hi%20Qopha%20Solutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-primary transition-colors"
+                >
+                  084 417 4305
+                </a>
               </div>
             </div>
             <div className="flex items-start gap-3">

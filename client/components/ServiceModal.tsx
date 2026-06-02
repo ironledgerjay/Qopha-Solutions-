@@ -65,7 +65,7 @@ export const ServiceModal = ({ isOpen, service, onClose }: ServiceModalProps) =>
           <div className="mt-8 pt-8 border-t border-gray-200">
             <p className="text-gray-600 mb-4">Ready to get started with our {service.title.toLowerCase()}?</p>
             <a
-              href="https://wa.me/27726778285?text=Hi%20Qopha%20Solutions%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services"
+              href="https://wa.me/27084174305?text=Hi%20Qopha%20Solutions%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold"

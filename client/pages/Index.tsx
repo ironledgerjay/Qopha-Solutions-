@@ -3,12 +3,9 @@ import { ArrowRight, CheckCircle, Target, Users, Lightbulb, Award, Briefcase, Za
 import { useState } from 'react';
 import { ServiceModal, Service } from '@/components/ServiceModal';
 
-const ClientLogo = ({ name, initials, color }: { name: string; initials: string; color: string }) => (
-  <div className={`flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-lg ${color} shadow-md hover:shadow-xl hover:scale-110 transition-all duration-300 cursor-pointer group`}>
-    <div className="text-center">
-      <div className="text-2xl md:text-3xl font-bold text-white group-hover:animate-pulse">{initials}</div>
-      <div className="text-xs text-white/80 mt-1 font-semibold">{name.split(' ')[0]}</div>
-    </div>
+const ClientLogo = ({ name }: { name: string }) => (
+  <div className="flex items-center justify-center h-24 md:h-28 px-4 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:scale-110 transition-all duration-300 cursor-pointer group">
+    <span className="text-gray-700 font-semibold text-center text-sm group-hover:text-primary transition-colors">{name}</span>
   </div>
 );
 
@@ -103,10 +100,10 @@ const Index = () => {
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 We design, implement and monitor bespoke programmes that align to national and global sustainability goals, focusing on skills development, enterprise growth, and socio-economic transformation.
               </p>
-              <button className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold text-lg hover:shadow-2xl hover:scale-105 active:scale-95">
+              <a href="#services" className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold text-lg hover:shadow-2xl hover:scale-105 active:scale-95">
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
 
             <div className="hidden md:block">
@@ -240,7 +237,7 @@ const Index = () => {
               ]}
               onClick={() => handleServiceClick('enterprise')}
             />
-            <ServiceCard 
+            <ServiceCard
               title="Supplier Development"
               icon={Target}
               items={[
@@ -250,8 +247,9 @@ const Index = () => {
                 'Supplier Diversity',
                 'Programme Implementation'
               ]}
+              onClick={() => handleServiceClick('supplier')}
             />
-            <ServiceCard 
+            <ServiceCard
               title="Socio-Economic Development"
               icon={Users}
               items={[
@@ -261,6 +259,7 @@ const Index = () => {
                 'Impact Monitoring',
                 'Evaluation Services'
               ]}
+              onClick={() => handleServiceClick('socio')}
             />
           </div>
         </div>
@@ -297,18 +296,18 @@ const Index = () => {
           <div className="mt-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Trusted by Industry Leaders</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 p-8 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl border border-primary/20">
-              <ClientLogo name="Coca-Cola" initials="CC" color="bg-red-600" />
-              <ClientLogo name="Distell" initials="DT" color="bg-amber-700" />
-              <ClientLogo name="Heineken" initials="HB" color="bg-green-700" />
-              <ClientLogo name="P&G" initials="PG" color="bg-blue-700" />
-              <ClientLogo name="SAB" initials="SAB" color="bg-red-500" />
-              <ClientLogo name="Bridgestone" initials="BS" color="bg-gray-700" />
-              <ClientLogo name="AngloAmerican" initials="AA" color="bg-slate-700" />
-              <ClientLogo name="Telkom" initials="TK" color="bg-teal-600" />
-              <ClientLogo name="Samsung" initials="SG" color="bg-blue-800" />
-              <ClientLogo name="Standard Bank" initials="SB" color="bg-blue-900" />
-              <ClientLogo name="SEDA" initials="SD" color="bg-orange-600" />
-              <ClientLogo name="Gauteng" initials="GP" color="bg-indigo-700" />
+              <ClientLogo name="Coca-Cola Beverages" />
+              <ClientLogo name="Distell" />
+              <ClientLogo name="Heineken Beverages" />
+              <ClientLogo name="P&G" />
+              <ClientLogo name="SAB" />
+              <ClientLogo name="Bridgestone" />
+              <ClientLogo name="AngloAmerican" />
+              <ClientLogo name="Telkom Foundation" />
+              <ClientLogo name="Samsung" />
+              <ClientLogo name="Standard Bank" />
+              <ClientLogo name="SEDA" />
+              <ClientLogo name="Gauteng Province" />
             </div>
           </div>
         </div>
@@ -325,23 +324,57 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <CertCard 
-              title="Industry Certifications"
-              items={[
-                'Certified GrowthWheel® Business Advisor',
-                'Certified Enterprise & Supplier Development Practitioner',
-                'Certified SEDA Business Coach'
-              ]}
-            />
-            <CertCard 
-              title="QCTO & SETA Accreditations"
-              items={[
-                'QCTO Occupational Skills Programme: New Venture Creation',
-                'Services SETA: Generic Management & New Venture Creation',
-                'ETDP SETA, INSETA & NAMB Accreditations',
-                'Registered Assessors & Moderators'
-              ]}
-            />
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">Industry Certifications</h3>
+              <div className="space-y-6">
+                <CertItem
+                  title="GrowthWheel® Certified Business Advisor"
+                  description="For enterprises at various growth stages. An online, real-time platform that allows access for the client, beneficiary and implementer to load, view, analyse and report on programme data."
+                />
+                <CertItem
+                  title="Commerce Edge Certified Practitioner"
+                  description="Certified Enterprise and Supplier Development practitioner demonstrating competence in business development."
+                />
+                <CertItem
+                  title="SEDA Business Coach"
+                  description="Certified Small Enterprise Development Agency business coach (an agency of the Department of Small Business Development)."
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">QCTO & SETA Accreditations</h3>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700"><strong>QCTO Occupational Skills Programme:</strong> New Venture Creation (07-QCTO/SDP170625095213)</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700"><strong>Services SETA:</strong> 13387: Generic Management NQF 4 and 5, New Venture Creation NQF 2 and 4</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700"><strong>ETDP SETA:</strong> ETDP011023 ODETDP 50334 NQF 5</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700"><strong>QCTO & NAMB:</strong> Accreditation Centre Number AC000293NAMB (Electrical)</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700"><strong>INSETA:</strong> Registration 04A1301358 (Assessor) & 04M1300373 (Moderator)</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700"><strong>Services SETA:</strong> 04A1301358 (Assessor); 04M1300373 (Moderator)</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700"><strong>ETDP SETA:</strong> Registration 487089 (Assessor)</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -361,11 +394,16 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-8">
-            <button className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-colors font-semibold text-lg">
-              Schedule Consultation
+            <a
+              href="https://wa.me/27084174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold text-lg hover:shadow-lg"
+            >
+              Schedule on WhatsApp
               <ArrowRight className="w-5 h-5" />
-            </button>
-            <a 
+            </a>
+            <a
               href="mailto:info@qophasolutions.co.za"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors font-semibold text-lg border border-white/20"
             >
@@ -438,6 +476,13 @@ const ExperienceCard = ({ number, label }: { number: string; label: string }) =>
     </div>
     <div className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">{number}</div>
     <p className="text-gray-700 font-medium">{label}</p>
+  </div>
+);
+
+const CertItem = ({ title, description }: { title: string; description: string }) => (
+  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-primary/30 hover:bg-primary/5 transition-all">
+    <h4 className="font-semibold text-gray-900 mb-2">{title}</h4>
+    <p className="text-sm text-gray-600">{description}</p>
   </div>
 );
 
