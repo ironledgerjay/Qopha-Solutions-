@@ -553,10 +553,4 @@ const Index = () => {
   );
 };
 
-interface StatBoxProps {
-  number: string;
-  label: string;
-  icon: React.ComponentType<{ className?: string }>;
-}
-
 export default Index;
