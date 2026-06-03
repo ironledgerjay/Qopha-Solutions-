@@ -57,6 +57,104 @@ const serviceData: Record<string, Service> = {
   },
 };
 
+// Component Definitions (before Index component)
+const AccreditationCard = ({
+  title,
+  description,
+  logoText,
+  bgColor
+}: {
+  title: string;
+  description: string;
+  logoText: string;
+  bgColor: string;
+}) => (
+  <div className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all group">
+    <div className={`w-20 h-20 ${bgColor} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+      <span className="text-2xl font-bold text-gray-700 group-hover:text-primary transition-colors">{logoText}</span>
+    </div>
+    <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{title}</h4>
+    <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+  </div>
+);
+
+interface StatBoxProps {
+  number: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+const StatBox = ({ number, label, icon: Icon }: StatBoxProps) => (
+  <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:bg-primary/10 group">
+    <Icon className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+    <div className="text-3xl font-bold text-gray-900 mb-1">{number}</div>
+    <p className="text-sm text-gray-600">{label}</p>
+  </div>
+);
+
+interface ServiceCardProps {
+  title: string;
+  icon: React.ComponentType<{ className?: string }>;
+  items: string[];
+  onClick?: () => void;
+}
+
+const ServiceCard = ({ title, icon: Icon, items, onClick }: ServiceCardProps) => (
+  <button
+    onClick={onClick}
+    className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-primary/5 text-left w-full"
+  >
+    <div className="flex items-center gap-3 mb-6">
+      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+        <Icon className="w-6 h-6 text-primary" />
+      </div>
+      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors">{title}</h3>
+    </div>
+    <ul className="space-y-3">
+      {items.map((item, idx) => (
+        <li key={idx} className="flex items-start gap-3 text-gray-700 group-hover:text-gray-900 transition-colors">
+          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+          <span className="group-hover:translate-x-1 transition-transform">{item}</span>
+        </li>
+      ))}
+    </ul>
+    {onClick && (
+      <div className="mt-6 text-primary font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+        Learn More <ArrowRight className="w-4 h-4" />
+      </div>
+    )}
+  </button>
+);
+
+const ExperienceCard = ({ number, label }: { number: string; label: string }) => (
+  <div className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/30 text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
+    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors mx-auto">
+      <TrendingUp className="w-6 h-6 text-primary" />
+    </div>
+    <div className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">{number}</div>
+    <p className="text-gray-700 font-medium">{label}</p>
+  </div>
+);
+
+interface CertCardProps {
+  title: string;
+  items: string[];
+}
+
+const CertCard = ({ title, items }: CertCardProps) => (
+  <div className="group bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-primary/30 hover:bg-gradient-to-br hover:from-gray-50 hover:to-primary/5 transition-all duration-300 hover:shadow-lg">
+    <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-primary transition-colors">{title}</h3>
+    <ul className="space-y-4">
+      {items.map((item, idx) => (
+        <li key={idx} className="flex items-start gap-3 text-gray-700 group-hover:text-gray-900 transition-colors">
+          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+          <span className="text-sm group-hover:translate-x-1 transition-transform">{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 const Index = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -460,96 +558,5 @@ interface StatBoxProps {
   label: string;
   icon: React.ComponentType<{ className?: string }>;
 }
-
-const StatBox = ({ number, label, icon: Icon }: StatBoxProps) => (
-  <div className="bg-primary/5 p-6 rounded-xl border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:bg-primary/10 group">
-    <Icon className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
-    <div className="text-3xl font-bold text-gray-900 mb-1">{number}</div>
-    <p className="text-sm text-gray-600">{label}</p>
-  </div>
-);
-
-interface ServiceCardProps {
-  title: string;
-  icon: React.ComponentType<{ className?: string }>;
-  items: string[];
-  onClick?: () => void;
-}
-
-const ServiceCard = ({ title, icon: Icon, items, onClick }: ServiceCardProps) => (
-  <button
-    onClick={onClick}
-    className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-gradient-to-br hover:from-white hover:to-primary/5 text-left w-full"
-  >
-    <div className="flex items-center gap-3 mb-6">
-      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-        <Icon className="w-6 h-6 text-primary" />
-      </div>
-      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors">{title}</h3>
-    </div>
-    <ul className="space-y-3">
-      {items.map((item, idx) => (
-        <li key={idx} className="flex items-start gap-3 text-gray-700 group-hover:text-gray-900 transition-colors">
-          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
-          <span className="group-hover:translate-x-1 transition-transform">{item}</span>
-        </li>
-      ))}
-    </ul>
-    {onClick && (
-      <div className="mt-6 text-primary font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-        Learn More <ArrowRight className="w-4 h-4" />
-      </div>
-    )}
-  </button>
-);
-
-const ExperienceCard = ({ number, label }: { number: string; label: string }) => (
-  <div className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-primary/30 text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
-    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors mx-auto">
-      <TrendingUp className="w-6 h-6 text-primary" />
-    </div>
-    <div className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">{number}</div>
-    <p className="text-gray-700 font-medium">{label}</p>
-  </div>
-);
-
-const AccreditationCard = ({
-  title,
-  description,
-  logoText,
-  bgColor
-}: {
-  title: string;
-  description: string;
-  logoText: string;
-  bgColor: string;
-}) => (
-  <div className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all group">
-    <div className={`w-20 h-20 ${bgColor} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-      <span className="text-2xl font-bold text-gray-700 group-hover:text-primary transition-colors">{logoText}</span>
-    </div>
-    <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{title}</h4>
-    <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
-  </div>
-);
-
-interface CertCardProps {
-  title: string;
-  items: string[];
-}
-
-const CertCard = ({ title, items }: CertCardProps) => (
-  <div className="group bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-primary/30 hover:bg-gradient-to-br hover:from-gray-50 hover:to-primary/5 transition-all duration-300 hover:shadow-lg">
-    <h3 className="text-2xl font-bold text-gray-900 mb-6 group-hover:text-primary transition-colors">{title}</h3>
-    <ul className="space-y-4">
-      {items.map((item, idx) => (
-        <li key={idx} className="flex items-start gap-3 text-gray-700 group-hover:text-gray-900 transition-colors">
-          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
-          <span className="text-sm group-hover:translate-x-1 transition-transform">{item}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
 
 export default Index;
