@@ -1,36 +1,43 @@
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Client {
   name: string;
   category: string;
+  logo?: string;
 }
 
 const clients: Client[] = [
   // FMCG
-  { name: 'Coca-Cola', category: 'FMCG' },
-  { name: 'Distell', category: 'FMCG' },
-  { name: 'Heineken', category: 'FMCG' },
+  { name: 'Coca-Cola', category: 'FMCG', logo: 'coca-cola' },
+  { name: 'Distell', category: 'FMCG', logo: 'distell' },
+  { name: 'Heineken', category: 'FMCG', logo: 'heineken' },
+  { name: 'Tiger Brands', category: 'FMCG', logo: 'tiger-brands' },
   // Automotive
-  { name: 'SAB', category: 'Automotive' },
-  { name: 'Bridgestone', category: 'Automotive' },
+  { name: 'SAB', category: 'Automotive', logo: 'sab' },
+  { name: 'Bridgestone', category: 'Automotive', logo: 'bridgestone' },
   // Mining
-  { name: 'AngloAmerican', category: 'Mining' },
+  { name: 'AngloAmerican', category: 'Mining', logo: 'anglo-american' },
   // Energy
-  { name: 'SASOL', category: 'Energy' },
+  { name: 'SASOL', category: 'Energy', logo: 'sasol' },
   // ICT
-  { name: 'Telkom', category: 'ICT' },
-  { name: 'Samsung', category: 'ICT' },
-  { name: 'NASPERS', category: 'ICT' },
+  { name: 'Telkom', category: 'ICT', logo: 'telkom' },
+  { name: 'Samsung', category: 'ICT', logo: 'samsung' },
+  { name: 'NASPERS', category: 'ICT', logo: 'naspers' },
   // Public Sector
-  { name: 'Gauteng Province', category: 'Public Sector' },
-  { name: 'SEDA', category: 'Public Sector' },
+  { name: 'Gauteng Province', category: 'Public Sector', logo: 'gauteng' },
+  { name: 'SEDA', category: 'Public Sector', logo: 'seda' },
+  { name: 'Department of SMBD', category: 'Public Sector', logo: 'dsbd' },
   // Financial Services
-  { name: 'Standard Bank', category: 'Financial Services' },
-  { name: 'P&G', category: 'Financial Services' },
+  { name: 'Standard Bank', category: 'Financial Services', logo: 'standard-bank' },
+  { name: 'P&G', category: 'Financial Services', logo: 'pg' },
+  { name: 'EWC', category: 'Financial Services', logo: 'ewc' },
   // Strategic Partners & NGO
-  { name: 'NTHA', category: 'Partners' },
-  { name: 'Eastern Cape Liquor', category: 'Partners' },
-  { name: 'SABCOHA', category: 'Partners' },
+  { name: 'NTHA', category: 'Partners', logo: 'ntha' },
+  { name: 'Eastern Cape Liquor Board', category: 'Partners', logo: 'eclb' },
+  { name: 'SABCOHA', category: 'Partners', logo: 'sabcoha' },
+  { name: 'SAFA', category: 'Partners', logo: 'safa' },
+  { name: 'South African Football Association', category: 'Partners', logo: 'safa' },
 ];
 
 export const ClientCarousel = () => {
@@ -96,22 +103,41 @@ export const ClientCarousel = () => {
       >
         {/* Duplicate clients for seamless looping */}
         {[...clients, ...clients].map((client, idx) => (
-          <ClientLogoCard key={idx} name={client.name} category={client.category} />
+          <ClientLogoCard key={idx} name={client.name} category={client.category} logo={client.logo} />
         ))}
       </div>
     </div>
   );
 };
 
-const ClientLogoCard = ({ name, category }: Client) => (
-  <div className="flex-shrink-0 w-40 h-28 bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-white/20 flex items-center justify-center p-4 group cursor-pointer">
-    <div className="text-center">
-      <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center bg-gray-200 group-hover:bg-primary/30 rounded-lg transition-colors">
-        <div className="text-lg font-bold text-gray-700 group-hover:text-primary transition-colors text-center">
-          {name}
+const ClientLogoCard = ({ name, category, logo }: Client) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/');
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="flex-shrink-0 w-40 h-28 bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-white/20 flex items-center justify-center p-4 group cursor-pointer hover:border-primary/50"
+    >
+      <div className="text-center w-full h-full flex flex-col items-center justify-center">
+        <div className="w-full h-20 mx-auto mb-2 flex items-center justify-center bg-white/5 group-hover:bg-primary/10 rounded-lg transition-colors overflow-hidden">
+          {logo ? (
+            <img
+              src={`/logos/${logo}.svg`}
+              alt={name}
+              className="max-w-[90%] max-h-[90%] object-contain group-hover:scale-110 transition-transform"
+            />
+          ) : (
+            <div className="text-sm font-bold text-gray-400 group-hover:text-primary transition-colors text-center px-2">
+              {name}
+            </div>
+          )}
         </div>
+        <p className="text-xs text-gray-400 mt-1 group-hover:text-gray-200 transition-colors">{category}</p>
       </div>
-      <p className="text-xs text-gray-300 mt-1">{category}</p>
-    </div>
-  </div>
-);
+    </button>
+  );
+};

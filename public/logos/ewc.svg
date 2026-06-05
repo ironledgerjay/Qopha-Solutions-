@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="95" fill="white" stroke="#0066CC" stroke-width="2"/>
+  <circle cx="60" cy="70" r="20" fill="#0066CC"/>
+  <circle cx="100" cy="70" r="20" fill="#0066CC"/>
+  <circle cx="140" cy="70" r="20" fill="#0066CC"/>
+  <text x="100" y="135" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0066CC" text-anchor="middle">EWC</text>
+</svg>

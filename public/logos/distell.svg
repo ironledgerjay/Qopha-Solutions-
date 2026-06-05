@@ -1,0 +1,5 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="180" height="180" fill="white" stroke="#333" stroke-width="2" rx="10"/>
+  <text x="100" y="75" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">DISTELL</text>
+  <rect x="40" y="95" width="120" height="3" fill="#D4AF37"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="white" stroke="#FF9900" stroke-width="2"/>
+  <rect x="30" y="30" width="140" height="140" fill="#FF9900" rx="10"/>
+  <circle cx="100" cy="100" r="50" fill="white"/>
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FF9900" text-anchor="middle">SEDA</text>
+</svg>

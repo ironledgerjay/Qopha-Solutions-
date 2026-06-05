@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#0066CC"/>
+  <circle cx="100" cy="100" r="70" fill="white"/>
+  <path d="M 70 100 Q 85 75 100 70 Q 115 75 130 100" fill="none" stroke="#0066CC" stroke-width="3"/>
+  <text x="100" y="135" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0066CC" text-anchor="middle">ANGLOAMERICAN</text>
+</svg>

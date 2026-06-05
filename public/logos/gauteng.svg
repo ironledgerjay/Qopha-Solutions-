@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="95" fill="#003366" stroke="#FFD700" stroke-width="3"/>
+  <circle cx="100" cy="100" r="70" fill="#FFD700"/>
+  <text x="100" y="95" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#003366" text-anchor="middle">GAUTENG</text>
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="12" fill="#003366" text-anchor="middle">PROVINCE</text>
+</svg>
