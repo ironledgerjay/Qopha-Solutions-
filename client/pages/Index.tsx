@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle, Target, Users, Lightbulb, Award, Briefcase, Za
 import { useState } from 'react';
 import { ServiceModal, Service } from '@/components/ServiceModal';
 import { ClientCarousel } from '@/components/ClientCarousel';
+import { ClientsModal } from '@/components/ClientsModal';
 
 
 const serviceData: Record<string, Service> = {
@@ -158,6 +159,7 @@ const CertCard = ({ title, items }: CertCardProps) => (
 const Index = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isClientsModalOpen, setIsClientsModalOpen] = useState(false);
 
   const handleServiceClick = (serviceKey: keyof typeof serviceData) => {
     setSelectedService(serviceData[serviceKey]);
@@ -363,9 +365,20 @@ const Index = () => {
             <div className="bg-gradient-to-r from-primary/5 via-white to-primary/5 p-8 rounded-2xl border border-primary/10">
               <ClientCarousel />
             </div>
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setIsClientsModalOpen(true)}
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all font-semibold border border-primary/50 hover:border-primary/80 hover:shadow-lg"
+              >
+                View All Partners
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
+
+      <ClientsModal isOpen={isClientsModalOpen} onClose={() => setIsClientsModalOpen(false)} />
 
       {/* Industry Certifications Section */}
       <section className="py-20 md:py-28 bg-white/5 backdrop-blur-sm">
