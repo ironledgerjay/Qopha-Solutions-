@@ -96,8 +96,8 @@ interface StatBoxProps {
 }
 
 const StatBox = ({ number, label, icon: Icon }: StatBoxProps) => (
-  <div className="bg-primary/20 p-6 rounded-xl border border-primary/30 hover:border-primary/60 hover:shadow-lg transition-all duration-300 hover:bg-primary/30 group">
-    <Icon className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+  <div className="bg-primary/20 p-6 rounded-xl border-2 border-primary/60 hover:border-primary/80 hover:shadow-2xl transition-all duration-300 hover:bg-primary/40 hover:scale-105 group">
+    <Icon className="w-8 h-8 text-primary mb-3 group-hover:scale-125 transition-transform" />
     <div className="text-3xl font-bold text-white mb-1">{number}</div>
     <p className="text-sm text-gray-300">{label}</p>
   </div>
@@ -187,7 +187,7 @@ const Index = () => {
                 Real Impact Solutions for Sustainable Transformation
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                We design, implement and monitor bespoke programmes that align to national and global sustainability goals, focusing on skills development, enterprise growth, and socio-economic transformation.
+                We partner to build and manage high-impact programmes that advance sustainability, strengthen enterprises, and accelerate socio economic transformation
               </p>
               <a href="#services" className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold text-lg hover:shadow-2xl hover:scale-105 active:scale-95">
                 Get Started
@@ -206,25 +206,25 @@ const Index = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">About Qopha Solutions</h2>
               <div className="space-y-4 text-gray-200 text-lg leading-relaxed">
                 <p>
-                  We are a <span className="font-semibold">B-BBEE Level one black woman owned</span> training and consultancy firm specialising in skills development and end-to-end project management services.
+                  We are a <span className="font-semibold">B-BBEE Level one woman-owned impact advisory and sustainability development solutions firm offering end-to-end project management services</span>.
                 </p>
                 <p>
-                  We design, implement and monitor bespoke client projects/programmes that align to the National Development Plan, National Skills Development Plan and the global Sustainable Development Goals.
+                  We cocreate, implement and monitor bespoke client projects/programmes that align to the National Development Plan, National Skills Development Plan and the global Sustainable Development Goals.
                 </p>
                 <p>
-                  Our work focuses on sustainability and transformation pillars including Skills Development, Enterprise & Supplier Development, and Socio-Economic Development. We also have extensive experience in executing CSI and philanthropic initiatives.
+                  Our work focuses on sustainability and transformation pillars including Circularity, Skills Development, Enterprise...
                 </p>
                 <p>
-                  We have a strong team of SETA accredited Facilitators, Assessors and Moderators, offering training in both QCTO and SAQA accredited and non-accredited courses.
+                  We have a strong team of accredited facilitators, Assessors and Moderators, offering training in SETA and QTCO accredited and non accredited courses.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <StatBox number="50+" label="Trained Female-Owned SMEs Empowered" icon={Users} />
-              <StatBox number="7,000+" label="Professionals Trained" icon={Award} />
-              <StatBox number="30+" label="Industry Partners" icon={Briefcase} />
-              <StatBox number="9" label="Years of Excellence" icon={Target} />
+              <StatBox number="20+" label="Project implemented" icon={Users} />
+              <StatBox number="7000+" label="SMMEs Empowered" icon={Award} />
+              <StatBox number="9+" label="provinces reached" icon={Briefcase} />
+              <StatBox number="10+" label="years of Client-focused solutions" icon={Target} />
             </div>
           </div>
         </div>
@@ -254,6 +254,14 @@ const Index = () => {
               <ul className="space-y-3 text-gray-200">
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span><strong>Client Solutions:</strong> Bespoke Solutions</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span><strong>Collaboration:</strong> Co-creating & stakeholder partnership</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span><strong>Innovation:</strong> Better ways to deliver</span>
                 </li>
                 <li className="flex items-center gap-3">
@@ -263,14 +271,6 @@ const Index = () => {
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span><strong>Impact:</strong> Positive & measurable results</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span><strong>Collaboration:</strong> Stakeholder partnerships</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span><strong>Client Relations:</strong> Quality standards</span>
                 </li>
               </ul>
             </div>
@@ -284,7 +284,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Services</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Comprehensive solutions tailored to your transformation journey
+              Comprehensive solutions tailored to your strategic evolution journey
             </p>
           </div>
 
@@ -345,45 +345,23 @@ const Index = () => {
       <section id="experience" className="py-20 md:py-28 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Proven Track Record</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Experience</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Trusted by industry leaders across multiple sectors
+              We've partnered with leading organizations across multiple sectors
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <ExperienceCard number="3,053" label="Liquor Traders Trained" />
-            <ExperienceCard number="4,200" label="Taverners Developed" />
-            <ExperienceCard number="30,000" label="Youth Reached Annually" />
+          <div className="bg-gradient-to-r from-primary/5 via-white to-primary/5 p-8 rounded-2xl border border-primary/10">
+            <ClientCarousel />
           </div>
-
-          <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-6">Industries We Serve</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Mining', 'Automotive', 'ICT', 'Public Sector', 'Financial Services', 'FMCG', 'Energy', 'NGO & Partnerships'].map((industry) => (
-                <div key={industry} className="flex items-center gap-2 p-3 bg-white/10 rounded-lg border border-white/5">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-gray-200 font-medium text-sm">{industry}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-white mb-4 text-center">Trusted by Industry Leaders</h3>
-            <p className="text-gray-300 text-center mb-8">We've partnered with leading organizations across multiple sectors</p>
-            <div className="bg-gradient-to-r from-primary/5 via-white to-primary/5 p-8 rounded-2xl border border-primary/10">
-              <ClientCarousel />
-            </div>
-            <div className="mt-8 text-center">
-              <button
-                onClick={() => setIsClientsModalOpen(true)}
-                className="inline-flex items-center gap-2 px-8 py-3 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all font-semibold border border-primary/50 hover:border-primary/80 hover:shadow-lg"
-              >
-                View All Partners
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
+          <div className="mt-8 text-center">
+            <button
+              onClick={() => setIsClientsModalOpen(true)}
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all font-semibold border border-primary/50 hover:border-primary/80 hover:shadow-lg"
+            >
+              View All Partners
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </section>
@@ -424,89 +402,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* QCTO & SETA Accreditations Section */}
-      <section className="py-20 md:py-28 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">QCTO & SETA Accreditations</h2>
-            <div className="w-16 h-1 bg-primary mx-auto mt-4"></div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <AccreditationCard
-              title="Quality Council for Trades & Occupations"
-              description="QCTO Occupational Skills Programme: New Venture Creation (07-QCTO/SDP170625095213)"
-              logoText="QCTO"
-              bgColor="bg-gradient-to-br from-red-100 to-rose-100"
-            />
-            <AccreditationCard
-              title="ETDP SETA"
-              description="ETDP011023 ODETDP 50334 NQF 5 - Education, Training and Development Sector Education and Training Authority"
-              logoText="ETDP"
-              bgColor="bg-gradient-to-br from-blue-100 to-cyan-100"
-            />
-            <AccreditationCard
-              title="Services SETA"
-              description="13387: Generic Management NQF 4 and 5, New Venture Creation NQF 2 and 4 - Accreditation 04A1301358 (Assessor); 04M1300373 (Moderator)"
-              logoText="SSETA"
-              bgColor="bg-gradient-to-br from-orange-100 to-amber-100"
-            />
-            <AccreditationCard
-              title="Manufacturing, Engineering & Related Services SETA"
-              description="Supporting skills development across manufacturing and related services sectors."
-              logoText="MER"
-              bgColor="bg-gradient-to-br from-yellow-100 to-amber-100"
-            />
-            <AccreditationCard
-              title="INSETA"
-              description="Insurance Sector Education and Training Authority - Registration 04A1301358 (Assessor) & 04M1300373 (Moderator)"
-              logoText="INSETA"
-              bgColor="bg-gradient-to-br from-blue-100 to-indigo-100"
-            />
-            <AccreditationCard
-              title="QCTO & NAMB"
-              description="Accreditation Centre Number AC000293NAMB (Electrical) - Quality Council for Trades & Occupations and National Artisan Moderation Body"
-              logoText="NAMB"
-              bgColor="bg-gradient-to-br from-purple-100 to-pink-100"
-            />
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-6">Complete Accreditation Summary</h3>
-            <ul className="space-y-4">
-              <li className="flex gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-200"><strong>QCTO Occupational Skills Programme:</strong> New Venture Creation (07-QCTO/SDP170625095213)</span>
-              </li>
-              <li className="flex gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-200"><strong>Services SETA:</strong> 13387: Generic Management NQF 4 and 5, New Venture Creation NQF 2 and 4</span>
-              </li>
-              <li className="flex gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-200"><strong>ETDP SETA:</strong> ETDP011023 ODETDP 50334 NQF 5</span>
-              </li>
-              <li className="flex gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-200"><strong>QCTO & NAMB:</strong> Accreditation Centre Number AC000293NAMB (Electrical)</span>
-              </li>
-              <li className="flex gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-200"><strong>INSETA:</strong> Registration 04A1301358 (Assessor) & 04M1300373 (Moderator)</span>
-              </li>
-              <li className="flex gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-200"><strong>Services SETA:</strong> 04A1301358 (Assessor); 04M1300373 (Moderator)</span>
-              </li>
-              <li className="flex gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-200"><strong>ETDP SETA:</strong> Registration 487089 (Assessor)</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <ServiceModal isOpen={isModalOpen} service={selectedService} onClose={() => setIsModalOpen(false)} />
 
       {/* CTA Section */}
@@ -514,19 +409,10 @@ const Index = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform?</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Let's discuss how our solutions can drive sustainable transformation for your organization.
+            Let's discuss how we can co-create solutions that can drive sustainable transformation for your organization.
           </p>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-8">
-            <a
-              href="https://wa.me/27084174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-semibold text-lg hover:shadow-lg"
-            >
-              Schedule on WhatsApp
-              <ArrowRight className="w-5 h-5" />
-            </a>
             <a
               href="mailto:info@qophasolutions.co.za"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors font-semibold text-lg border border-white/20"
@@ -541,6 +427,19 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/27084174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-40 group"
+        title="Chat with us on WhatsApp"
+      >
+        <svg className="w-8 h-8 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.846 1.235c-1.477.853-2.697 2.049-3.557 3.408-1.286 2.011-1.57 4.386-.787 6.59.779 2.189 2.383 3.968 4.212 4.991.575.33 1.331.893 2.251 1.281 1.287.508 2.26.465 2.901.433 1.193-.086 2.3-.532 3.19-1.191.631-.455 1.268-1.124 1.788-1.874.35-.487.641-1.042.786-1.465.239-.708.267-1.51.103-2.159-.321-1.304-1.105-2.432-2.175-3.127-.584-.387-1.25-.597-1.956-.597-.288 0-.576.031-.86.091-1.231.218-2.396.893-3.143 1.879-.384.496-.69 1.087-.855 1.69-.24.874-.053 1.784.535 2.417.325.341.792.622 1.383.774.37.091.755.104 1.14.062 1.147-.13 2.226-.642 2.986-1.424.467-.49.829-1.111 1.05-1.778.152-.458.214-.943.183-1.427-.155-2.457-2.018-4.512-4.476-4.718z"/>
+        </svg>
+      </a>
     </Layout>
   );
 };

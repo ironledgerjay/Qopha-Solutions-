@@ -23,7 +23,6 @@ const clients: Client[] = [
   // ICT
   { name: 'Telkom', category: 'ICT', logo: 'telkom' },
   { name: 'Samsung', category: 'ICT', logo: 'samsung' },
-  { name: 'NASPERS', category: 'ICT', logo: 'naspers' },
   // Public Sector
   { name: 'Gauteng Province', category: 'Public Sector', logo: 'gauteng' },
   { name: 'SEDA', category: 'Public Sector', logo: 'seda' },
