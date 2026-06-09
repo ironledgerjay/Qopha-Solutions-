@@ -436,7 +436,7 @@ const Index = () => {
         className="fixed bottom-8 right-8 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-40 group"
         title="Chat with us on WhatsApp"
       >
-        <img src="/whatsapp-logo.svg" alt="WhatsApp" className="w-8 h-8 group-hover:scale-110 transition-transform" />
+        <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Fb1bc1b2025d54653a41575e1d2ae6a4e?format=webp&width=800&height=1200" alt="WhatsApp" className="w-8 h-8 group-hover:scale-110 transition-transform" />
       </a>
     </Layout>
   );

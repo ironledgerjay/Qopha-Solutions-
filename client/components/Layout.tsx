@@ -36,7 +36,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/qopha-logo.svg" alt="Qopha Solutions" className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Ff8ebf1bd13aa485bbaff89d520459697?format=webp&width=800&height=1200" alt="Qopha Solutions" className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -116,7 +116,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/qopha-logo.svg" alt="Qopha Solutions" className="w-10 h-10" />
+              <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Ff8ebf1bd13aa485bbaff89d520459697?format=webp&width=800&height=1200" alt="Qopha Solutions" className="w-10 h-10" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
               Real Impact Solutions for Sustainable Transformation. A B-BBEE Level one black woman owned training and consultancy firm specialising in skills development and end-to-end project management services.
