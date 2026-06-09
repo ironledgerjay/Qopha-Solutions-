@@ -1,33 +1,16 @@
-<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-  <!-- Left Q with green rounded corners -->
-  <g id="q-logo">
-    <!-- Outer rounded square for Q -->
-    <rect x="150" y="80" width="250" height="250" rx="40" ry="40" fill="none" stroke="#7FD670" stroke-width="45"/>
-    <!-- Vertical stem of Q -->
-    <rect x="365" y="280" width="40" height="100" fill="#4A5568" rx="20"/>
-  </g>
-
-  <!-- Right S with green rounded corners -->
-  <g id="s-logo">
-    <!-- Top curve of S -->
-    <path d="M 550 150 Q 550 100 600 100 Q 650 100 650 140 Q 650 180 600 180 Q 550 180 550 220"
-          fill="none" stroke="#7FD670" stroke-width="45" stroke-linecap="round"/>
-    <!-- Bottom curve of S -->
-    <path d="M 550 280 Q 550 240 600 240 Q 650 240 650 280 Q 650 320 600 320 Q 550 320 550 360"
-          fill="none" stroke="#7FD670" stroke-width="45" stroke-linecap="round"/>
-  </g>
-
-  <!-- Text: QOPHA SOLUTIONS -->
-  <g id="text">
-    <!-- QOPHA text -->
-    <text x="120" y="400" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#4A5568">
-      QOPHA
-    </text>
-    <!-- Vertical separator -->
-    <line x1="615" y1="350" x2="615" y2="450" stroke="#4A5568" stroke-width="12" stroke-linecap="round"/>
-    <!-- SOLUTIONS text -->
-    <text x="680" y="400" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#4A5568" letter-spacing="3">
-      SOLUTIONS
-    </text>
-  </g>
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Green Q shape -->
+  <path d="M 200 80 Q 200 40 240 40 L 420 40 Q 460 40 460 80 L 460 260 Q 460 300 420 300 L 240 300 Q 200 300 200 260 L 200 180 L 160 180 Q 120 180 120 140 L 120 80 Q 120 40 160 40 L 240 40" fill="none" stroke="#7ec850" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Gray vertical bar in Q -->
+  <rect x="310" y="220" width="35" height="90" fill="#6b7280" rx="17.5"/>
+  
+  <!-- Green S shape -->
+  <path d="M 520 80 L 640 80 Q 680 80 680 120 L 680 160 Q 680 200 640 200 L 520 200 Q 480 200 480 240 L 480 280 Q 480 320 520 320 L 640 320 Q 680 320 680 280" fill="none" stroke="#7ec850" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- QOPHA text -->
+  <text x="50" y="380" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#6b7280" letter-spacing="3">QOPHA</text>
+  
+  <!-- SOLUTIONS text -->
+  <text x="500" y="380" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#6b7280" letter-spacing="3">SOLUTIONS</text>
 </svg>

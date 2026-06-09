@@ -36,7 +36,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/qs-logo.svg" alt="Qopha Solutions" className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
+            <img src="/qopha-logo.svg" alt="Qopha Solutions" className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -55,13 +55,6 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               Call
             </a>
-            <Link
-              to="#contact"
-              className="inline-flex items-center gap-2 px-6 py-2 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium hover:shadow-lg hover:scale-105"
-            >
-              Get in Touch
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,14 +86,6 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               Call
             </a>
-            <Link
-              to="#contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center gap-2 px-4 py-2 bg-primary text-gray-900 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-            >
-              Get in Touch
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </nav>
         )}
       </div>
@@ -131,7 +116,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/qs-logo.svg" alt="Qopha Solutions" className="w-10 h-10" />
+              <img src="/qopha-logo.svg" alt="Qopha Solutions" className="w-10 h-10" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
               Real Impact Solutions for Sustainable Transformation. A B-BBEE Level one black woman owned training and consultancy firm specialising in skills development and end-to-end project management services.
