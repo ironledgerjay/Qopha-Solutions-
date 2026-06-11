@@ -13,8 +13,8 @@ const clients: Client[] = [
   { name: 'Distell', category: 'FMCG', logo: 'distell' },
   { name: 'Heineken', category: 'FMCG', logo: 'heineken' },
   { name: 'Tiger Brands', category: 'FMCG', logo: 'tiger-brands' },
+  { name: 'SAB', category: 'FMCG', logo: 'sab' },
   // Automotive
-  { name: 'SAB', category: 'Automotive', logo: 'sab' },
   { name: 'Bridgestone', category: 'Automotive', logo: 'bridgestone' },
   // Mining
   { name: 'AngloAmerican', category: 'Mining', logo: 'anglo-american' },

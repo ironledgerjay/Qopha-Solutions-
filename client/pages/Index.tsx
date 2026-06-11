@@ -7,54 +7,35 @@ import { ClientsModal } from '@/components/ClientsModal';
 
 
 const serviceData: Record<string, Service> = {
-  skills: {
-    title: 'Skills Development',
-    description: 'Comprehensive training and development solutions',
-    items: [
-      'Training & Facilitation',
-      'Skills Gap Analysis',
-      'QCTO Aligned Preparations',
-      'SAQA Accredited Qualifications',
-      'Assessments & Moderation',
-    ],
-    fullDescription: 'Our Skills Development services focus on equipping individuals and organizations with the competencies needed to thrive in today\'s dynamic business environment. We design and deliver customized training programs aligned with QCTO and SAQA standards, conduct comprehensive skills gap analyses, and facilitate professional development through accredited assessments and moderation.',
+  advisory: {
+    title: 'Impact Advisory Services',
+    description: 'Strategic advisory and transformation solutions',
+    items: [],
+    fullDescription: 'Our Advisory approach aligns strategy, operations, and reporting with ESG and transformation priorities - strengthening value chains, enabling inclusive growth, and embedding purpose-driven performance across the business.',
+  },
+  circularity: {
+    title: 'Circularity',
+    description: 'Circular economy solutions',
+    items: [],
+    fullDescription: 'Our offering blends strategic insight, structured programme delivery, and value chain integration to reduce waste, recover resources, and unlock new economic opportunities. We strengthen supply chains, enhance SME participation, and drive long-term environmental and social impact',
   },
   enterprise: {
     title: 'Enterprise Development',
     description: 'Strategic business growth and transformation',
-    items: [
-      'Strategy Development',
-      'Business Diagnostics',
-      'Formalisation Solutions',
-      'Funding Linkages',
-      'Mentorship & Coaching',
-      'Monitoring and Evaluation',
-    ],
-    fullDescription: 'We provide end-to-end enterprise development services that help businesses transition from informal to formal operations, secure funding, and scale sustainably. Our experienced team conducts thorough business diagnostics, develops growth strategies, and provides ongoing mentorship and coaching to ensure long-term success.',
+    items: [],
+    fullDescription: 'We provide end-to-end Enterprise Development services that help businesses transition from informal to formal operations that can scale sustainably. Our experienced team drives clarity, capability, and sustainable performance across every stage of your business journey.',
   },
-  supplier: {
-    title: 'Supplier Development',
-    description: 'Building strong supplier ecosystems',
-    items: [
-      'Market Research',
-      'Spend and Demand Analysis',
-      'Procurement Analysis',
-      'Supplier Diversity',
-      'Supplier Development Solutions',
-      'Programme Implementation',
-    ],
-    fullDescription: 'Our Supplier Development services help organizations optimize their procurement processes and build diverse, capable supplier networks. We conduct market research and analysis, develop supplier strategies, and implement comprehensive development programmes that strengthen supply chain resilience and economic transformation.',
+  skills: {
+    title: 'Skills Development',
+    description: 'Comprehensive training and development solutions',
+    items: [],
+    fullDescription: 'Our Skills Development services focus on equipping individuals and organisations with the competencies needed to thrive in today\'s dynamic business environment. We design and deliver accredited and non-accredited programmes.',
   },
   socio: {
     title: 'Socio-Economic Development',
     description: 'Community transformation and impact initiatives',
-    items: [
-      'Strategy Design',
-      'Sustainable Solutions Development',
-      'Programme Execution',
-      'Monitoring and Evaluation',
-    ],
-    fullDescription: 'We design and execute socio-economic development initiatives that create lasting positive impact in communities. From strategy formulation to programme implementation and impact evaluation, we work collaboratively with stakeholders to drive sustainable transformation that aligns with national development priorities.',
+    items: [],
+    fullDescription: 'We design and execute Socio-Economic Development initiatives that create lasting positive impact in communities. From strategy formulation to programme implementation and impact evaluation, we work collaboratively with stakeholders to drive sustainable transformation that aligns with national development measurable, scalable outcomes.',
   },
 };
 
@@ -209,22 +190,22 @@ const Index = () => {
                   We are a <span className="font-semibold">B-BBEE Level one woman-owned impact advisory and sustainability development solutions firm offering end-to-end project management services</span>.
                 </p>
                 <p>
-                  We cocreate, implement and monitor bespoke client projects/programmes that align to the National Development Plan, National Skills Development Plan and the global Sustainable Development Goals.
+                  We co-create, implement and monitor bespoke client projects/programmes that align to the National Development Plan, National Skills Development Plan and the global Sustainable Development Goals.
                 </p>
                 <p>
-                  Our work focuses on sustainability and transformation pillars including Circularity, Skills Development, Enterprise...
+                  Our work focuses on sustainability and transformation pillars including Circularity, Skills Development, Enterprise Development.
                 </p>
                 <p>
-                  We have a strong team of accredited facilitators, Assessors and Moderators, offering training in SETA and QTCO accredited and non accredited courses.
+                  We have a strong team of accredited facilitators, Assessors and Moderators, offering training in SETA and QCTO accredited and non accredited courses.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <StatBox number="20+" label="Project implemented" icon={Users} />
+              <StatBox number="20+" label="Projects Implemented" icon={Users} />
               <StatBox number="7000+" label="SMMEs Empowered" icon={Award} />
-              <StatBox number="9+" label="provinces reached" icon={Briefcase} />
-              <StatBox number="10+" label="years of Client-focused solutions" icon={Target} />
+              <StatBox number="9+" label="Provinces Reached" icon={Briefcase} />
+              <StatBox number="10+" label="Years of Client-Focused Solutions" icon={Target} />
             </div>
           </div>
         </div>
@@ -254,7 +235,7 @@ const Index = () => {
               <ul className="space-y-3 text-gray-200">
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span><strong>Client Solutions:</strong> Bespoke Solutions</span>
+                  <span><strong>Client Centricity:</strong> Bespoke Solutions</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
@@ -288,55 +269,51 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             <ServiceCard
-              title="Skills Development"
-              icon={Award}
-              items={[
-                'Training & Facilitation',
-                'Skills Gap Analysis',
-                'QCTO Aligned Preparations',
-                'SAQA Accredited Qualifications',
-                'Assessments & Moderation'
-              ]}
-              onClick={() => handleServiceClick('skills')}
-            />
-            <ServiceCard
-              title="Enterprise Development"
+              title="Impact Advisory Services"
               icon={Lightbulb}
-              items={[
-                'Strategy Development',
-                'Business Diagnostics',
-                'Formalisation Solutions',
-                'Funding Linkages',
-                'Mentorship & Coaching'
-              ]}
-              onClick={() => handleServiceClick('enterprise')}
+              items={[]}
+              onClick={() => handleServiceClick('advisory')}
             />
-            <ServiceCard
-              title="Supplier Development"
-              icon={Target}
-              items={[
-                'Market Research',
-                'Spend Analysis',
-                'Procurement Analysis',
-                'Supplier Diversity',
-                'Programme Implementation'
-              ]}
-              onClick={() => handleServiceClick('supplier')}
-            />
-            <ServiceCard
-              title="Socio-Economic Development"
-              icon={Users}
-              items={[
-                'Strategy Design',
-                'Sustainable Solutions',
-                'Programme Execution',
-                'Impact Monitoring',
-                'Evaluation Services'
-              ]}
-              onClick={() => handleServiceClick('socio')}
-            />
+            <div className="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-white/15">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 group-hover:scale-110 transition-all duration-300">
+                  <Award className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">Sustainability Development Solutions</h3>
+              </div>
+              <div className="space-y-4">
+                <button
+                  onClick={() => handleServiceClick('circularity')}
+                  className="w-full text-left p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors group/sub"
+                >
+                  <h4 className="font-semibold text-white mb-1 group-hover/sub:text-primary transition-colors">Circularity</h4>
+                  <p className="text-sm text-gray-300 group-hover/sub:text-gray-200">Circular economy and resource optimization</p>
+                </button>
+                <button
+                  onClick={() => handleServiceClick('enterprise')}
+                  className="w-full text-left p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors group/sub"
+                >
+                  <h4 className="font-semibold text-white mb-1 group-hover/sub:text-primary transition-colors">Enterprise Development</h4>
+                  <p className="text-sm text-gray-300 group-hover/sub:text-gray-200">Business growth and transformation</p>
+                </button>
+                <button
+                  onClick={() => handleServiceClick('skills')}
+                  className="w-full text-left p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors group/sub"
+                >
+                  <h4 className="font-semibold text-white mb-1 group-hover/sub:text-primary transition-colors">Skills Development</h4>
+                  <p className="text-sm text-gray-300 group-hover/sub:text-gray-200">Training and competency development</p>
+                </button>
+                <button
+                  onClick={() => handleServiceClick('socio')}
+                  className="w-full text-left p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-colors group/sub"
+                >
+                  <h4 className="font-semibold text-white mb-1 group-hover/sub:text-primary transition-colors">Socio-Economic Development</h4>
+                  <p className="text-sm text-gray-300 group-hover/sub:text-gray-200">Community impact and transformation</p>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
