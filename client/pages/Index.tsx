@@ -209,22 +209,22 @@ const Index = () => {
                   We are a <span className="font-semibold">B-BBEE Level one woman-owned impact advisory and sustainability development solutions firm offering end-to-end project management services</span>.
                 </p>
                 <p>
-                  We cocreate, implement and monitor bespoke client projects/programmes that align to the National Development Plan, National Skills Development Plan and the global Sustainable Development Goals.
+                  We co-create, implement and monitor bespoke client projects/programmes that align to the National Development Plan, National Skills Development Plan and the global Sustainable Development Goals.
                 </p>
                 <p>
-                  Our work focuses on sustainability and transformation pillars including Circularity, Skills Development, Enterprise...
+                  Our work focuses on sustainability and transformation pillars including Circularity, Skills Development, Enterprise Development.
                 </p>
                 <p>
-                  We have a strong team of accredited facilitators, Assessors and Moderators, offering training in SETA and QTCO accredited and non accredited courses.
+                  We have a strong team of accredited facilitators, Assessors and Moderators, offering training in SETA and QCTO accredited and non accredited courses.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <StatBox number="20+" label="Project implemented" icon={Users} />
+              <StatBox number="20+" label="Projects Implemented" icon={Users} />
               <StatBox number="7000+" label="SMMEs Empowered" icon={Award} />
-              <StatBox number="9+" label="provinces reached" icon={Briefcase} />
-              <StatBox number="10+" label="years of Client-focused solutions" icon={Target} />
+              <StatBox number="9+" label="Provinces Reached" icon={Briefcase} />
+              <StatBox number="10+" label="Years of Client-Focused Solutions" icon={Target} />
             </div>
           </div>
         </div>
@@ -254,7 +254,7 @@ const Index = () => {
               <ul className="space-y-3 text-gray-200">
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span><strong>Client Solutions:</strong> Bespoke Solutions</span>
+                  <span><strong>Client Centricity:</strong> Bespoke Solutions</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
