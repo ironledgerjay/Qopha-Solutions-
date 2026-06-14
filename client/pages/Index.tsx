@@ -162,13 +162,13 @@ const Index = () => {
       {/* Hero Section */}
       <section className="text-white py-20 md:py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in-up">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                 Real Impact Solutions for Sustainable Transformation
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                We partner to build and manage high-impact programmes that advance sustainability, strengthen enterprises, and accelerate socio economic transformation
+                We partner to build and manage high-impact programmes that advance sustainability, strengthen enterprises, and accelerate socio-economic transformation
               </p>
               <a href="#services" className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold text-lg hover:shadow-2xl hover:scale-105 active:scale-95">
                 Get Started
@@ -182,8 +182,8 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-20 md:py-28 bg-white/5 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid md:grid-cols-2 gap-12 items-center justify-items-center">
+            <div className="w-full text-center md:text-left">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">About Qopha Solutions</h2>
               <div className="space-y-4 text-gray-200 text-lg leading-relaxed">
                 <p>
@@ -270,12 +270,6 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <ServiceCard
-              title="Impact Advisory Services"
-              icon={Lightbulb}
-              items={[]}
-              onClick={() => handleServiceClick('advisory')}
-            />
             <div className="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-white/15">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 group-hover:scale-110 transition-all duration-300">
@@ -314,6 +308,12 @@ const Index = () => {
                 </button>
               </div>
             </div>
+            <ServiceCard
+              title="Impact Advisory Services"
+              icon={Lightbulb}
+              items={[]}
+              onClick={() => handleServiceClick('advisory')}
+            />
           </div>
         </div>
       </section>
@@ -324,7 +324,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Experience</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              We've partnered with leading organizations across multiple sectors
+              We've collaborated with leading organisations across multiple sectors.
             </p>
           </div>
 
