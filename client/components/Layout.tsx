@@ -119,7 +119,7 @@ const Footer = () => {
               <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Fa70fe3c5c0c249729aa9c79db5f1dcfe?format=webp&width=800&height=1200" alt="Qopha Solutions" className="w-10 h-10" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
-              Real impact solutions for sustainable transformation. A B-BBEE Level One black woman-owned impact advisory and sustainability development solution firm
+              Real impact solutions for sustainable transformation. A B-BBEE Level One black woman-owned impact advisory and sustainability development solution firm.
             </p>
           </div>
 
