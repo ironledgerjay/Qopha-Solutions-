@@ -59,7 +59,7 @@ const AccreditationCard = ({
         <img
           src={logoSrc}
           alt={title}
-          className="w-full h-full object-cover"
+          className="max-w-[90%] max-h-[90%] object-contain"
         />
       ) : (
         <span className="text-2xl font-bold text-gray-700 group-hover:text-primary transition-colors">{logoText}</span>
@@ -162,13 +162,13 @@ const Index = () => {
       {/* Hero Section */}
       <section className="text-white py-20 md:py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in-up">
               <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                 Real Impact Solutions for Sustainable Transformation
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                We partner to build and manage high-impact programmes that advance sustainability, strengthen enterprises, and accelerate socio economic transformation
+                We partner to build and manage high-impact programmes that advance sustainability, strengthen enterprises, and accelerate socio-economic transformation
               </p>
               <a href="#services" className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-gray-900 rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold text-lg hover:shadow-2xl hover:scale-105 active:scale-95">
                 Get Started
@@ -182,8 +182,8 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-20 md:py-28 bg-white/5 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="flex flex-col items-center justify-center">
+            <div className="w-full text-center max-w-4xl">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">About Qopha Solutions</h2>
               <div className="space-y-4 text-gray-200 text-lg leading-relaxed">
                 <p>
@@ -200,8 +200,7 @@ const Index = () => {
                 </p>
               </div>
             </div>
-
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mt-12">
               <StatBox number="20+" label="Projects Implemented" icon={Users} />
               <StatBox number="7000+" label="SMMEs Empowered" icon={Award} />
               <StatBox number="9+" label="Provinces Reached" icon={Briefcase} />
@@ -221,35 +220,35 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors">
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
               <p className="text-gray-200 text-lg leading-relaxed">
                 To be a leading firm in providing real impact solutions that promote sustainable transformation.
               </p>
-              <div className="w-12 h-1 bg-primary mt-6"></div>
+              <div className="w-12 h-1 bg-primary mt-6 mx-auto"></div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors">
+            <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Our Core Values</h3>
-              <ul className="space-y-3 text-gray-200">
-                <li className="flex items-center gap-3">
+              <ul className="space-y-3 text-gray-200 text-center">
+                <li className="flex items-center justify-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span><strong>Client Centricity:</strong> Bespoke Solutions</span>
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center justify-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span><strong>Collaboration:</strong> Co-creating & stakeholder partnership</span>
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center justify-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span><strong>Innovation:</strong> Better ways to deliver</span>
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center justify-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span><strong>Professionalism:</strong> High competence & skills</span>
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex items-center justify-center gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                   <span><strong>Impact:</strong> Positive & measurable results</span>
                 </li>
@@ -269,13 +268,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <ServiceCard
-              title="Impact Advisory Services"
-              icon={Lightbulb}
-              items={[]}
-              onClick={() => handleServiceClick('advisory')}
-            />
+          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
             <div className="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-white/15">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 group-hover:scale-110 transition-all duration-300">
@@ -314,6 +307,12 @@ const Index = () => {
                 </button>
               </div>
             </div>
+            <ServiceCard
+              title="Impact Advisory Services"
+              icon={Lightbulb}
+              items={[]}
+              onClick={() => handleServiceClick('advisory')}
+            />
           </div>
         </div>
       </section>
@@ -321,22 +320,22 @@ const Index = () => {
       {/* Experience Section */}
       <section id="experience" className="py-20 md:py-28 bg-black/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 flex flex-col items-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Experience</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              We've partnered with leading organizations across multiple sectors
+            <p className="text-xl text-gray-300 max-w-2xl">
+              We've collaborated with leading organisations across multiple sectors.
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-primary/5 via-white to-primary/5 p-8 rounded-2xl border border-primary/10">
+          <div className="bg-gradient-to-r from-primary/5 via-white to-primary/5 p-8 rounded-2xl border border-primary/10 max-w-4xl mx-auto">
             <ClientCarousel />
           </div>
-          <div className="mt-8 text-center">
+          <div className="mt-8 text-center flex justify-center">
             <button
               onClick={() => setIsClientsModalOpen(true)}
               className="inline-flex items-center gap-2 px-8 py-3 bg-primary/20 text-primary rounded-lg hover:bg-primary/30 transition-all font-semibold border border-primary/50 hover:border-primary/80 hover:shadow-lg"
             >
-              View All Partners
+              View All Collaborators
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -353,7 +352,7 @@ const Index = () => {
             <div className="w-16 h-1 bg-primary mx-auto mt-4"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 justify-items-center">
             <AccreditationCard
               title="QCTO"
               description="Quality Council for Trades & Occupations - Supporting occupational skills development and accreditation."
@@ -397,13 +396,13 @@ const Index = () => {
 
       {/* CTA Section */}
       <section id="contact" className="py-20 md:py-28 text-white relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform?</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             Let's discuss how we can co-create solutions that can drive sustainable transformation for your organization.
           </p>
           
-          <div className="flex flex-col md:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col items-center mb-8">
             <a
               href="mailto:info@qophasolutions.co.za"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors font-semibold text-lg border border-white/20"

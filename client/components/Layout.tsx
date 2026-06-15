@@ -119,7 +119,7 @@ const Footer = () => {
               <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Fa70fe3c5c0c249729aa9c79db5f1dcfe?format=webp&width=800&height=1200" alt="Qopha Solutions" className="w-10 h-10" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
-              Real Impact Solutions for Sustainable Transformation. A B-BBEE Level one black woman owned training and consultancy firm specialising in skills development and end-to-end project management services.
+              Real impact solutions for sustainable transformation. A B-BBEE Level One black woman-owned impact advisory and sustainability development solution firm.
             </p>
           </div>
 
@@ -127,10 +127,12 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold mb-4 text-sm text-primary">SERVICES</h3>
               <ul className="space-y-2 text-sm text-gray-300">
-                <li><a href="#" className="hover:text-primary transition-colors">Skills Development</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Enterprise Development</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Supplier Development</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Socio-Economic Dev</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">Sustainability Development Solutions</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">Circularity</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">Enterprise Development</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">Skills Development</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">Socio-Economic Development</a></li>
+                <li><a href="#services" className="hover:text-primary transition-colors">Impact Advisory Services</a></li>
               </ul>
             </div>
             <div>
@@ -146,7 +148,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8 md:grid-cols-3">
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div className="text-sm">

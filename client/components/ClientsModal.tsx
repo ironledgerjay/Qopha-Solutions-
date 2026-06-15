@@ -13,6 +13,7 @@ const clients: Client[] = [
   { name: 'Distell', category: 'FMCG', logo: 'distell' },
   { name: 'Heineken', category: 'FMCG', logo: 'heineken' },
   { name: 'Tiger Brands', category: 'FMCG', logo: 'tiger-brands' },
+  { name: 'P&G', category: 'FMCG', logo: 'pg' },
   { name: 'SAB', category: 'FMCG', logo: 'sab' },
   // Automotive
   { name: 'Bridgestone', category: 'Automotive', logo: 'bridgestone' },
@@ -26,17 +27,17 @@ const clients: Client[] = [
   { name: 'NASPERS', category: 'ICT', logo: 'naspers' },
   // Public Sector
   { name: 'Gauteng Province', category: 'Public Sector', logo: 'gauteng' },
-  { name: 'SEDA', category: 'Public Sector', logo: 'seda' },
   { name: 'Department of SMBD', category: 'Public Sector', logo: 'dsbd' },
+  { name: 'SEDA', category: 'Public Sector', logo: 'seda' },
   // Financial Services
-  { name: 'Standard Bank', category: 'Financial Services', logo: 'standard-bank' },
-  { name: 'P&G', category: 'Financial Services', logo: 'pg' },
   { name: 'EWC', category: 'Financial Services', logo: 'ewc' },
+  { name: 'Standard Bank', category: 'Financial Services', logo: 'standard-bank' },
   // Strategic Partners & NGO
-  { name: 'NTHA', category: 'Partners', logo: 'ntha' },
-  { name: 'Eastern Cape Liquor Board', category: 'Partners', logo: 'eclb' },
-  { name: 'SABCOHA', category: 'Partners', logo: 'sabcoha' },
-  { name: 'SAFA', category: 'Partners', logo: 'safa' },
+  { name: 'NTHA', category: 'Strategic Partners & NGO', logo: 'ntha' },
+  { name: 'Eastern Cape Liquor Board', category: 'Strategic Partners & NGO', logo: 'eclb' },
+  { name: 'Distell Brands', category: 'Strategic Partners & NGO', logo: 'distell' },
+  { name: 'SABCOHA', category: 'Strategic Partners & NGO', logo: 'sabcoha' },
+  { name: 'South African Football Association', category: 'Strategic Partners & NGO', logo: 'safa' },
 ];
 
 interface ClientsModalProps {
@@ -92,7 +93,7 @@ export const ClientsModal = ({ isOpen, onClose }: ClientsModalProps) => {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className="bg-gray-950/95 backdrop-blur-md rounded-2xl border border-white/10 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div className="sticky top-0 bg-gray-950/95 backdrop-blur-md border-b border-white/10 flex items-center justify-between p-6">
-          <h2 className="text-3xl font-bold text-white">All Industry Partners</h2>
+          <h2 className="text-3xl font-bold text-white">All Collaborators</h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-white/10 rounded-lg transition-colors"
