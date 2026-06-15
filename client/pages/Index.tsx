@@ -59,7 +59,7 @@ const AccreditationCard = ({
         <img
           src={logoSrc}
           alt={title}
-          className="w-full h-full object-cover"
+          className="max-w-[90%] max-h-[90%] object-contain"
         />
       ) : (
         <span className="text-2xl font-bold text-gray-700 group-hover:text-primary transition-colors">{logoText}</span>
@@ -358,35 +358,35 @@ const Index = () => {
               description="Quality Council for Trades & Occupations - Supporting occupational skills development and accreditation."
               logoText="QCTO"
               bgColor="bg-white"
-              logoSrc="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2F9e2106aa39a1472aa8a4ab493fb2543e?format=webp&width=800&height=1200"
+              logoSrc="/logos/accreditations/qcto.svg"
             />
             <AccreditationCard
               title="GrowthWheel® Certified Business Advisor"
               description="For enterprises at various growth stages. An online, real-time platform that allows access for the client, beneficiary and implementer to load, view, analyse and report on programme data."
               logoText="GW"
               bgColor="bg-white"
-              logoSrc="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2F3819f76a337a43c397648f63f6a28743?format=webp&width=800&height=1200"
+              logoSrc="/logos/accreditations/growthwheel.svg"
             />
             <AccreditationCard
               title="Commerce Edge Certified Practitioner"
               description="Certified Enterprise and Supplier Development practitioner demonstrating competence in business development."
               logoText="CE"
               bgColor="bg-white"
-              logoSrc="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2F501f9fc569cd406e880856dbde6f74a5?format=webp&width=800&height=1200"
+              logoSrc="/logos/accreditations/commerce-edge.svg"
             />
             <AccreditationCard
               title="SEDA Business Coach"
               description="Certified Small Enterprise Development Agency business coach (an agency of the Department of Small Business Development)."
               logoText="SD"
               bgColor="bg-white"
-              logoSrc="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Fabf625823fee47b78b3f1eba00c1a6fd?format=webp&width=800&height=1200"
+              logoSrc="/logos/accreditations/services-seta.svg"
             />
             <AccreditationCard
               title="SETA"
               description="Sector Education and Training Authority - Supporting skills development across various sectors."
               logoText="SETA"
               bgColor="bg-white"
-              logoSrc="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2F6905d227109247659496c946a402e530?format=webp&width=800&height=1200"
+              logoSrc="/logos/accreditations/etdp-seta.svg"
             />
           </div>
         </div>
