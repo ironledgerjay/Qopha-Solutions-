@@ -35,7 +35,7 @@ const clients: Client[] = [
   // Strategic Partners & NGO
   { name: 'NTHA', category: 'Strategic Partners & NGO', logo: 'ntha' },
   { name: 'Eastern Cape Liquor Board', category: 'Strategic Partners & NGO', logo: 'eclb' },
-  { name: 'Distell Brands', category: 'Strategic Partners & NGO', logo: 'distell-brands' },
+  { name: 'Distell Brands', category: 'Strategic Partners & NGO', logo: 'distell' },
   { name: 'SABCOHA', category: 'Strategic Partners & NGO', logo: 'sabcoha' },
   { name: 'South African Football Association', category: 'Strategic Partners & NGO', logo: 'safa' },
 ];
