@@ -36,11 +36,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <img
-              src="/qs-logo.svg"
-              alt="Qopha Solutions"
-              className="h-10 w-auto transition-transform duration-300 group-hover:scale-[1.02] sm:h-12"
-            />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Fdfea6679c9184e19966cac73ef185692%2F1aab7d30cc294073a93190e49b8a7f56?format=webp&width=800&height=1200" alt="Qopha Solutions" className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -120,7 +116,7 @@ const Footer = () => {
         <div className="grid gap-12 mb-12 md:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/qs-logo.svg" alt="Qopha Solutions" className="h-10 w-auto" />
+              <img src="https://cdn.builder.io/api/v1/image/assets%2Fdfea6679c9184e19966cac73ef185692%2F1aab7d30cc294073a93190e49b8a7f56?format=webp&width=800&height=1200" alt="Qopha Solutions" className="w-10 h-10" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
               Real impact solutions for sustainable transformation. A B-BBEE Level One black woman-owned impact advisory and sustainability development solution firm.
