@@ -1,5 +1,5 @@
 import { Layout } from '@/components/Layout';
-import { ArrowRight, CheckCircle, Target, Users, Lightbulb, Award, Briefcase, Zap, TrendingUp } from 'lucide-react';
+import { ArrowRight, Target, Users, Lightbulb, Award, Briefcase, Zap, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 import { ServiceModal, Service } from '@/components/ServiceModal';
 import { ClientCarousel } from '@/components/ClientCarousel';
@@ -19,42 +19,24 @@ const serviceData: Record<string, Service> = {
     ],
     fullDescription:
       'Our Sustainability Development Solutions bring together programme design, implementation, and performance monitoring across key transformation pillars. We work with clients to build practical, measurable initiatives that support sustainability goals while strengthening people, enterprises, and communities.',
+    itemDetails: {
+      Circularity:
+        'Our offering blends strategic insight, structured programme delivery, and value chain integration to reduce waste, recover resources, and unlock new economic opportunities. We strengthen supply chains, enhance SME participation, and drive long-term environmental and social impact.',
+      'Supplier Development':
+        'Our Supplier Development services help organisations optimise their procurement processes and build diverse, capable supplier networks. We empower organisations with the insights, strategies, and support needed to build stronger, future-ready value chains.',
+      'Skills Development':
+        'Our Skills Development services focus on equipping individuals and organisations with the competencies needed to thrive in today\'s dynamic business environment. We design and deliver accredited and non-accredited programmes.',
+      'Enterprise Development':
+        'We provide end-to-end Enterprise Development services that help businesses transition from informal to formal operations that can scale sustainably. Our experienced team drives clarity, capability, and sustainable performance across every stage of the business journey.',
+      'Socio-Economic Development':
+        'We design and execute Socio-Economic Development initiatives that create lasting positive impact in communities. From strategy formulation to programme implementation and impact evaluation, we work collaboratively with stakeholders to drive sustainable transformation through measurable, scalable outcomes.',
+    },
   },
   advisory: {
     title: 'Impact Advisory Services',
     description: 'Strategic advisory and transformation solutions',
     items: [],
     fullDescription: 'Our Advisory approach aligns strategy, operations, and reporting with ESG and transformation priorities - strengthening value chains, enabling inclusive growth, and embedding purpose-driven performance across the business.',
-  },
-  circularity: {
-    title: 'Circularity',
-    description: 'Circular economy solutions',
-    items: [],
-    fullDescription: 'Our offering blends strategic insight, structured programme delivery, and value chain integration to reduce waste, recover resources, and unlock new economic opportunities. We strengthen supply chains, enhance SME participation, and drive long-term environmental and social impact',
-  },
-  supplier: {
-    title: 'Supplier Development',
-    description: 'Stronger, future-ready value chains',
-    items: [],
-    fullDescription: 'Our Supplier Development services help organisations optimise their procurement processes and build diverse, capable supplier networks. We empower organisations with the insights, strategies, and support needed to build stronger, future-ready value chains.',
-  },
-  enterprise: {
-    title: 'Enterprise Development',
-    description: 'Strategic business growth and transformation',
-    items: [],
-    fullDescription: 'We provide end-to-end Enterprise Development services that help businesses transition from informal to formal operations that can scale sustainably. Our experienced team drives clarity, capability, and sustainable performance across every stage of your business journey.',
-  },
-  skills: {
-    title: 'Skills Development',
-    description: 'Comprehensive training and development solutions',
-    items: [],
-    fullDescription: 'Our Skills Development services focus on equipping individuals and organisations with the competencies needed to thrive in today\'s dynamic business environment. We design and deliver accredited and non-accredited programmes.',
-  },
-  socio: {
-    title: 'Socio-Economic Development',
-    description: 'Community transformation and impact initiatives',
-    items: [],
-    fullDescription: 'We design and execute Socio-Economic Development initiatives that create lasting positive impact in communities. From strategy formulation to programme implementation and impact evaluation, we work collaboratively with stakeholders to drive sustainable transformation that aligns with national development measurable, scalable outcomes.',
   },
 };
 
@@ -108,10 +90,9 @@ interface ServiceCardProps {
   icon: React.ComponentType<{ className?: string }>;
   items: string[];
   onClick?: () => void;
-  onItemClick?: (item: string) => void;
 }
 
-const ServiceCard = ({ title, icon: Icon, items, onClick, onItemClick }: ServiceCardProps) => (
+const ServiceCard = ({ title, icon: Icon, items, onClick }: ServiceCardProps) => (
   <div className="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-white/15 text-left w-full">
     <div className="flex items-center gap-3 mb-6">
       <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 group-hover:scale-110 transition-all duration-300">
@@ -119,26 +100,11 @@ const ServiceCard = ({ title, icon: Icon, items, onClick, onItemClick }: Service
       </div>
       <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">{title}</h3>
     </div>
-    {onItemClick && (
-      <p className="mb-4 text-sm text-gray-400">
-        Select a focus area to view its dedicated service description.
-      </p>
-    )}
     <ul className="space-y-3">
       {items.map((item, idx) => (
         <li key={idx} className="flex items-start gap-3 text-gray-300 group-hover:text-gray-100 transition-colors">
           <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
-          {onItemClick ? (
-            <button
-              type="button"
-              onClick={() => onItemClick(item)}
-              className="text-left font-medium transition-transform hover:translate-x-1 hover:text-primary focus:outline-none focus:text-primary"
-            >
-              {item}
-            </button>
-          ) : (
-            <span className="group-hover:translate-x-1 transition-transform">{item}</span>
-          )}
+          <span className="group-hover:translate-x-1 transition-transform">{item}</span>
         </li>
       ))}
     </ul>
@@ -187,27 +153,10 @@ const Index = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClientsModalOpen, setIsClientsModalOpen] = useState(false);
-  const sustainabilityItemKeyMap: Record<string, keyof typeof serviceData> = {
-    Circularity: 'circularity',
-    'Supplier Development': 'supplier',
-    'Skills Development': 'skills',
-    'Enterprise Development': 'enterprise',
-    'Socio-Economic Development': 'socio',
-  };
 
   const handleServiceClick = (serviceKey: keyof typeof serviceData) => {
     setSelectedService(serviceData[serviceKey]);
     setIsModalOpen(true);
-  };
-
-  const handleSubserviceClick = (item: string) => {
-    const serviceKey = sustainabilityItemKeyMap[item];
-
-    if (!serviceKey) {
-      return;
-    }
-
-    handleServiceClick(serviceKey);
   };
 
   return (
@@ -281,41 +230,21 @@ const Index = () => {
 
             <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Our Core Values</h3>
-              <ul className="space-y-3 text-gray-200 max-w-lg mx-auto">
-                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
-                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
-                    <strong className="text-white">Client Centricity</strong>
-                    <span className="text-gray-300">Bespoke solutions</span>
-                  </span>
+              <ul className="max-w-2xl mx-auto space-y-2 text-left text-gray-200">
+                <li>
+                  <span className="font-semibold text-white">Client Centricity:</span> Bespoke solutions
                 </li>
-                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
-                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
-                    <strong className="text-white">Collaboration</strong>
-                    <span className="text-gray-300">Co-creating and stakeholder partnership</span>
-                  </span>
+                <li>
+                  <span className="font-semibold text-white">Collaboration:</span> Co-creating and stakeholder partnership
                 </li>
-                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
-                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
-                    <strong className="text-white">Innovation</strong>
-                    <span className="text-gray-300">Better ways to deliver</span>
-                  </span>
+                <li>
+                  <span className="font-semibold text-white">Innovation:</span> Better ways to deliver
                 </li>
-                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
-                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
-                    <strong className="text-white">Professionalism</strong>
-                    <span className="text-gray-300">High competence and skills</span>
-                  </span>
+                <li>
+                  <span className="font-semibold text-white">Professionalism:</span> High competence and skills
                 </li>
-                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
-                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
-                    <strong className="text-white">Impact</strong>
-                    <span className="text-gray-300">Positive and measurable results</span>
-                  </span>
+                <li>
+                  <span className="font-semibold text-white">Impact:</span> Positive and measurable results
                 </li>
               </ul>
             </div>
@@ -337,9 +266,8 @@ const Index = () => {
             <ServiceCard
               title="Sustainability Development Solutions"
               icon={Zap}
-              items={serviceData.sustainability.items}
+              items={[]}
               onClick={() => handleServiceClick('sustainability')}
-              onItemClick={handleSubserviceClick}
             />
             <ServiceCard
               title="Impact Advisory Services"

@@ -1,11 +1,12 @@
 import { X } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export interface Service {
   title: string;
   description: string;
   items: string[];
   fullDescription: string;
+  itemDetails?: Record<string, string>;
 }
 
 interface ServiceModalProps {
@@ -15,6 +16,8 @@ interface ServiceModalProps {
 }
 
 export const ServiceModal = ({ isOpen, service, onClose }: ServiceModalProps) => {
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -25,6 +28,12 @@ export const ServiceModal = ({ isOpen, service, onClose }: ServiceModalProps) =>
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setSelectedItem(null);
+    }
+  }, [isOpen, service]);
 
   if (!isOpen || !service) return null;
 
@@ -48,7 +57,37 @@ export const ServiceModal = ({ isOpen, service, onClose }: ServiceModalProps) =>
             </p>
           </div>
 
-          {service.items.length > 0 && (
+          {service.items.length > 0 && service.itemDetails && (
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Focus Areas</h3>
+              <ul className="space-y-3">
+                {service.items.map((item, idx) => (
+                  <li key={idx}>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedItem(item)}
+                      className={`w-full rounded-xl border px-4 py-3 text-left text-lg font-medium transition-colors ${
+                        selectedItem === item
+                          ? 'border-primary bg-primary/10 text-primary'
+                          : 'border-gray-200 text-gray-700 hover:border-primary/40 hover:text-primary'
+                      }`}
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+
+              {selectedItem && service.itemDetails[selectedItem] && (
+                <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-6">
+                  <h4 className="mb-3 text-xl font-semibold text-gray-900">{selectedItem}</h4>
+                  <p className="text-lg leading-relaxed text-gray-700">{service.itemDetails[selectedItem]}</p>
+                </div>
+              )}
+            </div>
+          )}
+
+          {service.items.length > 0 && !service.itemDetails && (
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">What We Offer</h3>
               <ul className="space-y-4">

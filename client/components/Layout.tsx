@@ -37,7 +37,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <img
-              src="/qopha-logo.svg"
+              src="/qs-logo.svg"
               alt="Qopha Solutions"
               className="h-10 w-auto transition-transform duration-300 group-hover:scale-[1.02] sm:h-12"
             />
@@ -120,7 +120,7 @@ const Footer = () => {
         <div className="grid gap-12 mb-12 md:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/qopha-logo.svg" alt="Qopha Solutions" className="h-10 w-auto" />
+              <img src="/qs-logo.svg" alt="Qopha Solutions" className="h-10 w-auto" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
               Real impact solutions for sustainable transformation. A B-BBEE Level One black woman-owned impact advisory and sustainability development solution firm.
