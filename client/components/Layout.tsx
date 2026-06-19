@@ -131,6 +131,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4 text-sm text-primary">SERVICES</h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li><a href="#services" className="hover:text-primary transition-colors">Sustainability Development Solutions</a></li>
+              <li><a href="#services" className="hover:text-primary transition-colors">Supplier Development</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">Impact Advisory Services</a></li>
             </ul>
           </div>

@@ -119,6 +119,11 @@ const ServiceCard = ({ title, icon: Icon, items, onClick, onItemClick }: Service
       </div>
       <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">{title}</h3>
     </div>
+    {onItemClick && (
+      <p className="mb-4 text-sm text-gray-400">
+        Select a focus area to view its dedicated service description.
+      </p>
+    )}
     <ul className="space-y-3">
       {items.map((item, idx) => (
         <li key={idx} className="flex items-start gap-3 text-gray-300 group-hover:text-gray-100 transition-colors">
@@ -127,7 +132,7 @@ const ServiceCard = ({ title, icon: Icon, items, onClick, onItemClick }: Service
             <button
               type="button"
               onClick={() => onItemClick(item)}
-              className="text-left transition-transform hover:translate-x-1 hover:text-primary"
+              className="text-left font-medium transition-transform hover:translate-x-1 hover:text-primary focus:outline-none focus:text-primary"
             >
               {item}
             </button>
@@ -141,7 +146,7 @@ const ServiceCard = ({ title, icon: Icon, items, onClick, onItemClick }: Service
       <button
         type="button"
         onClick={onClick}
-        className="mt-6 text-primary font-semibold flex items-center gap-2 transition-transform group-hover:translate-x-1 hover:text-white"
+        className="mt-6 inline-flex items-center gap-2 text-primary font-semibold transition-transform group-hover:translate-x-1 hover:text-white"
       >
         Learn More <ArrowRight className="w-4 h-4" />
       </button>
