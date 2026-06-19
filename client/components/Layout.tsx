@@ -36,7 +36,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Fa70fe3c5c0c249729aa9c79db5f1dcfe?format=webp&width=800&height=1200" alt="Qopha Solutions" className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
+            <img
+              src="/qopha-logo.svg"
+              alt="Qopha Solutions"
+              className="h-10 w-auto transition-transform duration-300 group-hover:scale-[1.02] sm:h-12"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -49,7 +53,7 @@ const Header = () => {
 
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:0844174305"
+              href="tel:+27844174305"
               className="inline-flex items-center gap-2 px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all duration-300 font-medium hover:shadow-lg hover:scale-105"
             >
               <Phone className="w-4 h-4" />
@@ -79,7 +83,7 @@ const Header = () => {
             <MobileNavLink href="#experience" onClick={() => setIsMenuOpen(false)}>Clients & Experience</MobileNavLink>
             <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>Contact Us</MobileNavLink>
             <a
-              href="tel:0844174305"
+              href="tel:+27844174305"
               onClick={() => setIsMenuOpen(false)}
               className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600 transition-colors"
             >
@@ -116,7 +120,7 @@ const Footer = () => {
         <div className="grid gap-12 mb-12 md:grid-cols-[1.3fr_1fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Fa70fe3c5c0c249729aa9c79db5f1dcfe?format=webp&width=800&height=1200" alt="Qopha Solutions" className="w-10 h-10" />
+              <img src="/qopha-logo.svg" alt="Qopha Solutions" className="h-10 w-auto" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
               Real impact solutions for sustainable transformation. A B-BBEE Level One black woman-owned impact advisory and sustainability development solution firm.
@@ -127,6 +131,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4 text-sm text-primary">SERVICES</h3>
             <ul className="space-y-2 text-sm text-gray-300">
               <li><a href="#services" className="hover:text-primary transition-colors">Sustainability Development Solutions</a></li>
+              <li><a href="#services" className="hover:text-primary transition-colors">Supplier Development</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">Impact Advisory Services</a></li>
             </ul>
           </div>
@@ -156,12 +161,12 @@ const Footer = () => {
                 <div>
                   <p className="font-medium text-white">Phone / WhatsApp</p>
                   <a
-                    href="https://wa.me/27084174305?text=Hi%20Qopha%20Solutions"
+                    href="https://wa.me/27844174305?text=Hi%20Qopha%20Solutions"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary transition-colors"
                   >
-                    084 417 4305
+                    +27 84 417 4305
                   </a>
                 </div>
               </div>

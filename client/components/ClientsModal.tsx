@@ -7,15 +7,17 @@ interface ClientsModalProps {
 }
 
 const ClientCard = ({ name, category, logo, imageSrc }: Client) => {
+  const src = imageSrc ?? (logo ? `/logos/${logo}.svg` : undefined);
+
   return (
     <div className="rounded-xl border border-white/10 bg-white p-5 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
       <div className="flex flex-col items-center justify-center h-full">
-        <div className="mb-4 flex h-16 w-full items-center justify-center overflow-hidden">
-          {imageSrc || logo ? (
+        <div className="mb-4 flex h-20 w-full items-center justify-center overflow-hidden rounded-lg bg-gray-50 px-3">
+          {src ? (
             <img
-              src={imageSrc ?? `/logos/${logo}.svg`}
+              src={src}
               alt={name}
-              className="max-h-full max-w-[85%] object-contain"
+              className="max-h-full max-w-full object-contain"
             />
           ) : (
             <div className="px-2 text-center text-sm font-bold text-gray-500">{name}</div>

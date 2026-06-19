@@ -1,16 +1,28 @@
-<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Green Q shape -->
-  <path d="M 200 80 Q 200 40 240 40 L 420 40 Q 460 40 460 80 L 460 260 Q 460 300 420 300 L 240 300 Q 200 300 200 260 L 200 180 L 160 180 Q 120 180 120 140 L 120 80 Q 120 40 160 40 L 240 40" fill="none" stroke="#7ec850" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- Gray vertical bar in Q -->
-  <rect x="310" y="220" width="35" height="90" fill="#6b7280" rx="17.5"/>
-  
-  <!-- Green S shape -->
-  <path d="M 520 80 L 640 80 Q 680 80 680 120 L 680 160 Q 680 200 640 200 L 520 200 Q 480 200 480 240 L 480 280 Q 480 320 520 320 L 640 320 Q 680 320 680 280" fill="none" stroke="#7ec850" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- QOPHA text -->
-  <text x="50" y="380" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#6b7280" letter-spacing="3">QOPHA</text>
-  
-  <!-- SOLUTIONS text -->
-  <text x="500" y="380" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="#6b7280" letter-spacing="3">SOLUTIONS</text>
+<svg
+  viewBox="0 0 920 250"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="logoTitle"
+>
+  <title id="logoTitle">Qopha Solutions logo</title>
+  <g fill="none" stroke="#93C83E" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="72" y="42" width="238" height="116" rx="34" stroke-width="24" />
+    <path
+      d="M 390 67
+         H 555
+         C 589 67 607 83 607 109
+         C 607 136 589 151 555 151
+         H 450
+         C 416 151 399 166 399 192
+         C 399 214 416 228 449 228
+         H 588"
+      stroke-width="24"
+    />
+  </g>
+  <rect x="214" y="132" width="24" height="99" rx="12" fill="#8E919A" />
+  <g fill="#9A9CA5" font-family="Arial, Helvetica, sans-serif">
+    <text x="28" y="223" font-size="56" font-weight="700" letter-spacing="1.5">QOPHA</text>
+    <rect x="344" y="167" width="14" height="61" rx="7" fill="#8E919A" />
+    <text x="374" y="223" font-size="54" font-weight="500" letter-spacing="2.2">SOLUTIONS</text>
+  </g>
 </svg>

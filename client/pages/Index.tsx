@@ -12,6 +12,7 @@ const serviceData: Record<string, Service> = {
     description: 'Integrated sustainability and transformation solutions',
     items: [
       'Circularity',
+      'Supplier Development',
       'Skills Development',
       'Enterprise Development',
       'Socio-Economic Development',
@@ -30,6 +31,12 @@ const serviceData: Record<string, Service> = {
     description: 'Circular economy solutions',
     items: [],
     fullDescription: 'Our offering blends strategic insight, structured programme delivery, and value chain integration to reduce waste, recover resources, and unlock new economic opportunities. We strengthen supply chains, enhance SME participation, and drive long-term environmental and social impact',
+  },
+  supplier: {
+    title: 'Supplier Development',
+    description: 'Stronger, future-ready value chains',
+    items: [],
+    fullDescription: 'Our Supplier Development services help organisations optimise their procurement processes and build diverse, capable supplier networks. We empower organisations with the insights, strategies, and support needed to build stronger, future-ready value chains.',
   },
   enterprise: {
     title: 'Enterprise Development',
@@ -101,33 +108,50 @@ interface ServiceCardProps {
   icon: React.ComponentType<{ className?: string }>;
   items: string[];
   onClick?: () => void;
+  onItemClick?: (item: string) => void;
 }
 
-const ServiceCard = ({ title, icon: Icon, items, onClick }: ServiceCardProps) => (
-  <button
-    onClick={onClick}
-    className="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-white/15 text-left w-full"
-  >
+const ServiceCard = ({ title, icon: Icon, items, onClick, onItemClick }: ServiceCardProps) => (
+  <div className="group bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-primary/50 hover:shadow-2xl transition-all duration-300 hover:bg-white/15 text-left w-full">
     <div className="flex items-center gap-3 mb-6">
       <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 group-hover:scale-110 transition-all duration-300">
         <Icon className="w-6 h-6 text-primary" />
       </div>
       <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">{title}</h3>
     </div>
+    {onItemClick && (
+      <p className="mb-4 text-sm text-gray-400">
+        Select a focus area to view its dedicated service description.
+      </p>
+    )}
     <ul className="space-y-3">
       {items.map((item, idx) => (
         <li key={idx} className="flex items-start gap-3 text-gray-300 group-hover:text-gray-100 transition-colors">
           <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
-          <span className="group-hover:translate-x-1 transition-transform">{item}</span>
+          {onItemClick ? (
+            <button
+              type="button"
+              onClick={() => onItemClick(item)}
+              className="text-left font-medium transition-transform hover:translate-x-1 hover:text-primary focus:outline-none focus:text-primary"
+            >
+              {item}
+            </button>
+          ) : (
+            <span className="group-hover:translate-x-1 transition-transform">{item}</span>
+          )}
         </li>
       ))}
     </ul>
     {onClick && (
-      <div className="mt-6 text-primary font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+      <button
+        type="button"
+        onClick={onClick}
+        className="mt-6 inline-flex items-center gap-2 text-primary font-semibold transition-transform group-hover:translate-x-1 hover:text-white"
+      >
         Learn More <ArrowRight className="w-4 h-4" />
-      </div>
+      </button>
     )}
-  </button>
+  </div>
 );
 
 const ExperienceCard = ({ number, label }: { number: string; label: string }) => (
@@ -163,10 +187,27 @@ const Index = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClientsModalOpen, setIsClientsModalOpen] = useState(false);
+  const sustainabilityItemKeyMap: Record<string, keyof typeof serviceData> = {
+    Circularity: 'circularity',
+    'Supplier Development': 'supplier',
+    'Skills Development': 'skills',
+    'Enterprise Development': 'enterprise',
+    'Socio-Economic Development': 'socio',
+  };
 
   const handleServiceClick = (serviceKey: keyof typeof serviceData) => {
     setSelectedService(serviceData[serviceKey]);
     setIsModalOpen(true);
+  };
+
+  const handleSubserviceClick = (item: string) => {
+    const serviceKey = sustainabilityItemKeyMap[item];
+
+    if (!serviceKey) {
+      return;
+    }
+
+    handleServiceClick(serviceKey);
   };
 
   return (
@@ -240,40 +281,40 @@ const Index = () => {
 
             <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Our Core Values</h3>
-              <ul className="space-y-4 text-gray-200 max-w-md mx-auto">
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Client Centricity:</strong>
-                    <span>Bespoke Solutions</span>
+              <ul className="space-y-3 text-gray-200 max-w-lg mx-auto">
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Client Centricity</strong>
+                    <span className="text-gray-300">Bespoke solutions</span>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Collaboration:</strong>
-                    <span>Co-creating & stakeholder partnership</span>
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Collaboration</strong>
+                    <span className="text-gray-300">Co-creating and stakeholder partnership</span>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Innovation:</strong>
-                    <span>Better ways to deliver</span>
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Innovation</strong>
+                    <span className="text-gray-300">Better ways to deliver</span>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Professionalism:</strong>
-                    <span>High competence & skills</span>
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Professionalism</strong>
+                    <span className="text-gray-300">High competence and skills</span>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Impact:</strong>
-                    <span>Positive & measurable results</span>
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Impact</strong>
+                    <span className="text-gray-300">Positive and measurable results</span>
                   </span>
                 </li>
               </ul>
@@ -296,8 +337,9 @@ const Index = () => {
             <ServiceCard
               title="Sustainability Development Solutions"
               icon={Zap}
-              items={[]}
+              items={serviceData.sustainability.items}
               onClick={() => handleServiceClick('sustainability')}
+              onItemClick={handleSubserviceClick}
             />
             <ServiceCard
               title="Impact Advisory Services"
@@ -404,7 +446,7 @@ const Index = () => {
           </div>
 
           <div className="text-sm text-gray-400">
-            <p>Office: 084 417 4305</p>
+            <p>Office: +27 84 417 4305</p>
             <p>33 Ballyclare Drive, Bryanston, Gauteng 2191</p>
           </div>
         </div>
@@ -412,13 +454,16 @@ const Index = () => {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/27084174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
+        href="https://wa.me/27844174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-40 group"
+        className="fixed bottom-6 right-6 z-40 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#38d16a] via-[#23c55e] to-[#109245] p-[3px] shadow-[0_18px_30px_rgba(8,35,19,0.35)] transition-all duration-300 hover:scale-110 hover:shadow-[0_24px_36px_rgba(8,35,19,0.45)] sm:bottom-8 sm:right-8 group"
         title="Chat with us on WhatsApp"
       >
-        <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Fb1bc1b2025d54653a41575e1d2ae6a4e?format=webp&width=800&height=1200" alt="WhatsApp" className="w-8 h-8 group-hover:scale-110 transition-transform" />
+        <span className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.35),transparent_32%),linear-gradient(145deg,#2fe36c_0%,#24c55c_58%,#169944_100%)] shadow-[inset_0_2px_5px_rgba(255,255,255,0.28),inset_0_-10px_16px_rgba(7,61,27,0.32)]">
+          <span className="absolute inset-x-3 top-2 h-4 rounded-full bg-white/25 blur-md"></span>
+          <img src="/whatsapp-logo.svg" alt="WhatsApp" className="relative h-10 w-10 drop-shadow-[0_3px_5px_rgba(0,0,0,0.28)] transition-transform duration-300 group-hover:scale-110" />
+        </span>
       </a>
     </Layout>
   );
