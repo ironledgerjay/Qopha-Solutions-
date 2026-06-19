@@ -240,40 +240,40 @@ const Index = () => {
 
             <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Our Core Values</h3>
-              <ul className="space-y-4 text-gray-200 max-w-md mx-auto">
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Client Centricity:</strong>
-                    <span>Bespoke Solutions</span>
+              <ul className="space-y-3 text-gray-200 max-w-lg mx-auto">
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Client Centricity</strong>
+                    <span className="text-gray-300">Bespoke solutions</span>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Collaboration:</strong>
-                    <span>Co-creating & stakeholder partnership</span>
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Collaboration</strong>
+                    <span className="text-gray-300">Co-creating and stakeholder partnership</span>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Innovation:</strong>
-                    <span>Better ways to deliver</span>
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Innovation</strong>
+                    <span className="text-gray-300">Better ways to deliver</span>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Professionalism:</strong>
-                    <span>High competence & skills</span>
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Professionalism</strong>
+                    <span className="text-gray-300">High competence and skills</span>
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-left">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span className="flex flex-1 flex-col sm:flex-row sm:gap-2">
-                    <strong className="sm:min-w-[145px]">Impact:</strong>
-                    <span>Positive & measurable results</span>
+                <li className="grid grid-cols-[auto,1fr] gap-x-3 gap-y-1 rounded-xl bg-white/5 px-4 py-3 text-left">
+                  <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                  <span className="grid gap-1 sm:grid-cols-[minmax(150px,180px),1fr] sm:items-start sm:gap-3">
+                    <strong className="text-white">Impact</strong>
+                    <span className="text-gray-300">Positive and measurable results</span>
                   </span>
                 </li>
               </ul>
@@ -404,7 +404,7 @@ const Index = () => {
           </div>
 
           <div className="text-sm text-gray-400">
-            <p>Office: 084 417 4305</p>
+            <p>Office: +27 84 417 4305</p>
             <p>33 Ballyclare Drive, Bryanston, Gauteng 2191</p>
           </div>
         </div>
@@ -412,13 +412,16 @@ const Index = () => {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/27084174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
+        href="https://wa.me/27844174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 z-40 group"
+        className="fixed bottom-6 right-6 z-40 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#38d16a] via-[#23c55e] to-[#109245] p-[3px] shadow-[0_18px_30px_rgba(8,35,19,0.35)] transition-all duration-300 hover:scale-110 hover:shadow-[0_24px_36px_rgba(8,35,19,0.45)] sm:bottom-8 sm:right-8 group"
         title="Chat with us on WhatsApp"
       >
-        <img src="https://cdn.builder.io/api/v1/image/assets%2F63ae93423ad24014ac015627ba16894f%2Fb1bc1b2025d54653a41575e1d2ae6a4e?format=webp&width=800&height=1200" alt="WhatsApp" className="w-8 h-8 group-hover:scale-110 transition-transform" />
+        <span className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.35),transparent_32%),linear-gradient(145deg,#2fe36c_0%,#24c55c_58%,#169944_100%)] shadow-[inset_0_2px_5px_rgba(255,255,255,0.28),inset_0_-10px_16px_rgba(7,61,27,0.32)]">
+          <span className="absolute inset-x-3 top-2 h-4 rounded-full bg-white/25 blur-md"></span>
+          <img src="/whatsapp-logo.svg" alt="WhatsApp" className="relative h-10 w-10 drop-shadow-[0_3px_5px_rgba(0,0,0,0.28)] transition-transform duration-300 group-hover:scale-110" />
+        </span>
       </a>
     </Layout>
   );
