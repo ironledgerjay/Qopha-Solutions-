@@ -387,10 +387,10 @@ const Index = () => {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/27844174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
+        href="https://wa.me/0844174305?text=Hi%20Qopha%20Solutions%2C%20I%27d%20like%20to%20schedule%20a%20consultation"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#38d16a] via-[#23c55e] to-[#109245] p-[3px] shadow-[0_18px_30px_rgba(8,35,19,0.35)] transition-all duration-300 hover:scale-110 hover:shadow-[0_24px_36px_rgba(8,35,19,0.45)] sm:bottom-8 sm:right-8 group"
+        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#38d16a] via-[#23c55e] to-[#109245] p-[3px] shadow-[0_18px_30px_rgba(8,35,19,0.35)] transition-all duration-300 hover:scale-110 hover:shadow-[0_24px_36px_rgba(8,35,19,0.45)] sm:bottom-8 sm:right-8 group"
         title="Chat with us on WhatsApp"
       >
         <span className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.35),transparent_32%),linear-gradient(145deg,#2fe36c_0%,#24c55c_58%,#169944_100%)] shadow-[inset_0_2px_5px_rgba(255,255,255,0.28),inset_0_-10px_16px_rgba(7,61,27,0.32)]">
