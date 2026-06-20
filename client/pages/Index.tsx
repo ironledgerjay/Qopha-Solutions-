@@ -202,7 +202,7 @@ const Index = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mt-12">
               <StatBox number="20+" label="Projects Implemented" icon={Users} />
               <StatBox number="7000+" label="SMMEs Empowered" icon={Award} />
-              <StatBox number="9+" label="Provinces Reached" icon={Briefcase} />
+              <StatBox number="9" label="Provinces Reached" icon={Briefcase} />
               <StatBox number="10+" label="Years of Client-Focused Solutions" icon={Target} />
             </div>
           </div>
@@ -231,20 +231,25 @@ const Index = () => {
             <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-white/10 hover:border-primary/30 transition-colors text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Our Core Values</h3>
               <ul className="max-w-2xl mx-auto space-y-2 text-left text-gray-200">
-                <li>
-                  <span className="font-semibold text-white">Client Centricity:</span> Bespoke solutions
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><span className="font-semibold text-white">Client Centricity:</span> Bespoke solutions</span>
                 </li>
-                <li>
-                  <span className="font-semibold text-white">Collaboration:</span> Co-creating and stakeholder partnership
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><span className="font-semibold text-white">Collaboration:</span> Stakeholder Partnership</span>
                 </li>
-                <li>
-                  <span className="font-semibold text-white">Innovation:</span> Better ways to deliver
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><span className="font-semibold text-white">Innovation:</span> Better ways to deliver</span>
                 </li>
-                <li>
-                  <span className="font-semibold text-white">Professionalism:</span> High competence and skills
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><span className="font-semibold text-white">Professionalism:</span> High competence and skills</span>
                 </li>
-                <li>
-                  <span className="font-semibold text-white">Impact:</span> Positive and measurable results
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><span className="font-semibold text-white">Impact:</span> Positive and measurable results</span>
                 </li>
               </ul>
             </div>
@@ -390,7 +395,7 @@ const Index = () => {
       >
         <span className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.35),transparent_32%),linear-gradient(145deg,#2fe36c_0%,#24c55c_58%,#169944_100%)] shadow-[inset_0_2px_5px_rgba(255,255,255,0.28),inset_0_-10px_16px_rgba(7,61,27,0.32)]">
           <span className="absolute inset-x-3 top-2 h-4 rounded-full bg-white/25 blur-md"></span>
-          <img src="/whatsapp-logo.svg" alt="WhatsApp" className="relative h-10 w-10 drop-shadow-[0_3px_5px_rgba(0,0,0,0.28)] transition-transform duration-300 group-hover:scale-110" />
+          <img src="https://cdn.builder.io/api/v1/image/assets%2Fdfea6679c9184e19966cac73ef185692%2Fd9d8590a091d4faebe0b1e2960c1d598?format=webp&width=800&height=1200" alt="WhatsApp" className="relative h-10 w-10 drop-shadow-[0_3px_5px_rgba(0,0,0,0.28)] transition-transform duration-300 group-hover:scale-110" />
         </span>
       </a>
     </Layout>
